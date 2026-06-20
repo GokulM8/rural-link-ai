@@ -1,0 +1,87 @@
+{
+  "common": {
+    "appName": "RuralLink",
+    "governmentSchemes": "सरकारी योजना",
+    "schemes": "योजना",
+    "loadingMap": "नकाशा लोड होत आहे…"
+  },
+  "dashboard": {
+    "nearbyServices": "जवळपासच्या सेवा",
+    "findingLocation": "तुमचे स्थान शोधत आहे…",
+    "loadingServices": "जवळपासच्या सेवा लोड होत आहेत…",
+    "geolocationUnsupported": "या ब्राउझरमध्ये जिओलोकेशन समर्थित नाही.",
+    "locationDenied": "तुमचे स्थान मिळू शकले नाही. कृपया स्थान परवानगी द्या.",
+    "servicesLoadError": "सेवा लोड होऊ शकल्या नाहीत. कृपया पुन्हा प्रयत्न करा.",
+    "noServicesFound": "{radius} किमी परिसरात सेवा आढळल्या नाहीत.",
+    "retry": "पुन्हा प्रयत्न करा",
+    "noServicesMatchFilter": "निवडलेल्या श्रेणींशी जुळणाऱ्या सेवा नाहीत."
+  },
+  "category": {
+    "hospital": "रुग्णालय",
+    "clinic": "क्लिनिक",
+    "bank": "बँक",
+    "atm": "एटीएम",
+    "school": "शाळा",
+    "government": "सरकारी कार्यालय"
+  },
+  "status": {
+    "hoursUnknown": "वेळ माहीत नाही",
+    "openNow": "आता उघडे आहे",
+    "closed": "बंद आहे",
+    "schedule": "वेळ: {hours}",
+    "helpline": "क्रमांक उपलब्ध नाही — हेल्पलाइन: {number}",
+    "typicalHours": "नेहमीची वेळ (अंदाजे): {hours}",
+    "nearestAlternative": "जवळचे ज्ञात: {name} — {phone}"
+  },
+  "aiTip": {
+    "comingSoon": "AI सूचना लवकरच येत आहे",
+    "generating": "सूचना तयार होत आहे…"
+  },
+  "distance": {
+    "meters": "{value} मी",
+    "kilometers": "{value} किमी"
+  },
+  "languagePicker": {
+    "title": "तुमची भाषा निवडा",
+    "suggested": "सुचवलेले",
+    "close": "बंद करा"
+  },
+  "actions": {
+    "call": "कॉल करा",
+    "viewOnMaps": "गूगल मॅप्सवर पाहा",
+    "showDetails": "तपशील दाखवा",
+    "hideDetails": "तपशील लपवा",
+    "aiSuggested": "AI-सुचवलेले — कृपया पडताळणी करा",
+    "apply": "अर्ज करा"
+  },
+  "schemes": {
+    "backToMap": "नकाशावर परत जा",
+    "description": "MyScheme.gov.in वरून, सामान्य ग्रामीण आंध्र प्रदेश शेतकऱ्याच्या पात्रतेचा AI अंदाज सह.",
+    "state": "राज्य",
+    "categoryLabel": "श्रेणी",
+    "filter": "फिल्टर करा",
+    "loadError": "योजना लोड होऊ शकल्या नाहीत. कृपया पुन्हा प्रयत्न करा.",
+    "noResults": "या राज्य आणि श्रेणीसाठी योजना आढळल्या नाहीत.",
+    "previous": "मागील",
+    "next": "पुढील",
+    "pageOf": "पान {page} / {total}",
+    "eligibilityComingSoon": "AI पात्रता तपासणी लवकरच येत आहे"
+  },
+  "mapView": {
+    "youAreHere": "तुम्ही येथे आहात",
+    "unavailable": "नकाशा उपलब्ध नाही"
+  },
+  "voice": {
+    "speak": "बोला",
+    "stop": "थांबा",
+    "errors": {
+      "rate_limited": "खूप विनंत्या, कृपया थोडा वेळ थांबा.",
+      "not_configured": "व्हॉइस असिस्टंट अजून सेट केलेले नाही.",
+      "daily_limit_reached": "व्हॉइस असिस्टंटची दैनिक मर्यादा गाठली. कृपया उद्या पुन्हा प्रयत्न करा.",
+      "invalid_body": "काहीतरी चुकले, कृपया पुन्हा प्रयत्न करा.",
+      "missing_audio": "ऐकू शकले नाही, कृपया पुन्हा प्रयत्न करा.",
+      "recognition_failed": "समजले नाही, कृपया पुन्हा प्रयत्न करा.",
+      "mic_denied": "व्हॉइस सर्चसाठी मायक्रोफोन परवानगी आवश्यक आहे."
+    }
+  }
+}

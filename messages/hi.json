@@ -1,0 +1,87 @@
+{
+  "common": {
+    "appName": "RuralLink",
+    "governmentSchemes": "सरकारी योजनाएं",
+    "schemes": "योजनाएं",
+    "loadingMap": "मैप लोड हो रहा है…"
+  },
+  "dashboard": {
+    "nearbyServices": "आस-पास की सेवाएं",
+    "findingLocation": "आपका स्थान खोजा जा रहा है…",
+    "loadingServices": "आस-पास की सेवाएं लोड हो रही हैं…",
+    "geolocationUnsupported": "इस ब्राउज़र में जियोलोकेशन समर्थित नहीं है।",
+    "locationDenied": "आपका स्थान प्राप्त नहीं हो सका। कृपया स्थान की अनुमति दें।",
+    "servicesLoadError": "सेवाएं लोड नहीं हो सकीं। कृपया फिर से प्रयास करें।",
+    "noServicesFound": "{radius} किमी के दायरे में कोई सेवा नहीं मिली।",
+    "retry": "फिर कोशिश करें",
+    "noServicesMatchFilter": "चयनित श्रेणियों से मेल खाने वाली कोई सेवा नहीं है।"
+  },
+  "category": {
+    "hospital": "अस्पताल",
+    "clinic": "क्लिनिक",
+    "bank": "बैंक",
+    "atm": "एटीएम",
+    "school": "स्कूल",
+    "government": "सरकारी कार्यालय"
+  },
+  "status": {
+    "hoursUnknown": "समय अज्ञात",
+    "openNow": "अभी खुला है",
+    "closed": "बंद है",
+    "schedule": "समय: {hours}",
+    "helpline": "कोई नंबर सूचीबद्ध नहीं — हेल्पलाइन: {number}",
+    "typicalHours": "सामान्य समय (अनुमानित): {hours}",
+    "nearestAlternative": "निकटतम ज्ञात: {name} — {phone}"
+  },
+  "aiTip": {
+    "comingSoon": "AI सुझाव जल्द आ रहा है",
+    "generating": "सुझाव तैयार हो रहा है…"
+  },
+  "distance": {
+    "meters": "{value} मी",
+    "kilometers": "{value} किमी"
+  },
+  "languagePicker": {
+    "title": "अपनी भाषा चुनें",
+    "suggested": "सुझाया गया",
+    "close": "बंद करें"
+  },
+  "actions": {
+    "call": "कॉल करें",
+    "viewOnMaps": "गूगल मैप्स पर देखें",
+    "showDetails": "विवरण दिखाएं",
+    "hideDetails": "विवरण छिपाएं",
+    "aiSuggested": "AI-सुझावित — कृपया सत्यापित करें",
+    "apply": "आवेदन करें"
+  },
+  "schemes": {
+    "backToMap": "मैप पर वापस जाएं",
+    "description": "MyScheme.gov.in से, एक सामान्य ग्रामीण आंध्र प्रदेश किसान की पात्रता का AI अनुमान सहित।",
+    "state": "राज्य",
+    "categoryLabel": "श्रेणी",
+    "filter": "फ़िल्टर करें",
+    "loadError": "योजनाएं लोड नहीं हो सकीं। कृपया फिर से प्रयास करें।",
+    "noResults": "इस राज्य और श्रेणी के लिए कोई योजना नहीं मिली।",
+    "previous": "पिछला",
+    "next": "आगे",
+    "pageOf": "पृष्ठ {page} का {total}",
+    "eligibilityComingSoon": "AI पात्रता जांच जल्द आ रही है"
+  },
+  "mapView": {
+    "youAreHere": "आप यहाँ हैं",
+    "unavailable": "मैप उपलब्ध नहीं है"
+  },
+  "voice": {
+    "speak": "बोलें",
+    "stop": "रोकें",
+    "errors": {
+      "rate_limited": "बहुत अधिक अनुरोध, कृपया थोड़ी देर रुकें।",
+      "not_configured": "वॉइस असिस्टेंट अभी सेट नहीं है।",
+      "daily_limit_reached": "वॉइस असिस्टेंट की दैनिक सीमा पूरी हो गई। कृपया कल फिर कोशिश करें।",
+      "invalid_body": "कुछ गलत हो गया, कृपया फिर से कोशिश करें।",
+      "missing_audio": "सुन नहीं पाया, कृपया फिर से कोशिश करें।",
+      "recognition_failed": "समझ नहीं पाया, कृपया फिर से कोशिश करें।",
+      "mic_denied": "वॉइस सर्च के लिए माइक्रोफ़ोन की अनुमति चाहिए।"
+    }
+  }
+}

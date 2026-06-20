@@ -1,0 +1,87 @@
+{
+  "common": {
+    "appName": "RuralLink",
+    "governmentSchemes": "ಸರ್ಕಾರಿ ಯೋಜನೆಗಳು",
+    "schemes": "ಯೋಜನೆಗಳು",
+    "loadingMap": "ನಕ್ಷೆ ಲೋಡ್ ಆಗುತ್ತಿದೆ…"
+  },
+  "dashboard": {
+    "nearbyServices": "ಹತ್ತಿರದ ಸೇವೆಗಳು",
+    "findingLocation": "ನಿಮ್ಮ ಸ್ಥಳವನ್ನು ಹುಡುಕಲಾಗುತ್ತಿದೆ…",
+    "loadingServices": "ಹತ್ತಿರದ ಸೇವೆಗಳನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ…",
+    "geolocationUnsupported": "ಈ ಬ್ರೌಸರ್‌ನಲ್ಲಿ ಜಿಯೋಲೊಕೇಶನ್ ಬೆಂಬಲಿತವಾಗಿಲ್ಲ.",
+    "locationDenied": "ನಿಮ್ಮ ಸ್ಥಳವನ್ನು ಪಡೆಯಲಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಸ್ಥಳ ಅನುಮತಿ ನೀಡಿ.",
+    "servicesLoadError": "ಸೇವೆಗಳನ್ನು ಲೋಡ್ ಮಾಡಲಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+    "noServicesFound": "{radius} ಕಿ.ಮೀ ವ್ಯಾಪ್ತಿಯಲ್ಲಿ ಸೇವೆಗಳು ಕಂಡುಬಂದಿಲ್ಲ.",
+    "retry": "ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ",
+    "noServicesMatchFilter": "ಆಯ್ಕೆಮಾಡಿದ ವರ್ಗಗಳಿಗೆ ಹೊಂದುವ ಸೇವೆಗಳಿಲ್ಲ."
+  },
+  "category": {
+    "hospital": "ಆಸ್ಪತ್ರೆ",
+    "clinic": "ಕ್ಲಿನಿಕ್",
+    "bank": "ಬ್ಯಾಂಕ್",
+    "atm": "ಎಟಿಎಂ",
+    "school": "ಶಾಲೆ",
+    "government": "ಸರ್ಕಾರಿ ಕಚೇರಿ"
+  },
+  "status": {
+    "hoursUnknown": "ಸಮಯ ಗೊತ್ತಿಲ್ಲ",
+    "openNow": "ಈಗ ತೆರೆದಿದೆ",
+    "closed": "ಮುಚ್ಚಿದೆ",
+    "schedule": "ಸಮಯ: {hours}",
+    "helpline": "ಸಂಖ್ಯೆ ಪಟ್ಟಿಯಲ್ಲಿಲ್ಲ — ಸಹಾಯವಾಣಿ: {number}",
+    "typicalHours": "ಸಾಮಾನ್ಯ ಸಮಯ (ಅಂದಾಜು): {hours}",
+    "nearestAlternative": "ಹತ್ತಿರದ ತಿಳಿದಿರುವುದು: {name} — {phone}"
+  },
+  "aiTip": {
+    "comingSoon": "AI ಸಲಹೆ ಶೀಘ್ರದಲ್ಲಿ",
+    "generating": "ಸಲಹೆ ತಯಾರಾಗುತ್ತಿದೆ…"
+  },
+  "distance": {
+    "meters": "{value} ಮೀ",
+    "kilometers": "{value} ಕಿ.ಮೀ"
+  },
+  "languagePicker": {
+    "title": "ನಿಮ್ಮ ಭಾಷೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+    "suggested": "ಸೂಚಿಸಲಾಗಿದೆ",
+    "close": "ಮುಚ್ಚಿ"
+  },
+  "actions": {
+    "call": "ಕರೆ ಮಾಡಿ",
+    "viewOnMaps": "ಗೂಗಲ್ ಮ್ಯಾಪ್ಸ್‌ನಲ್ಲಿ ನೋಡಿ",
+    "showDetails": "ವಿವರಗಳನ್ನು ತೋರಿಸಿ",
+    "hideDetails": "ವಿವರಗಳನ್ನು ಮರೆಮಾಡಿ",
+    "aiSuggested": "AI-ಸೂಚಿಸಿದೆ — ದಯವಿಟ್ಟು ಪರಿಶೀಲಿಸಿ",
+    "apply": "ಅರ್ಜಿ ಸಲ್ಲಿಸಿ"
+  },
+  "schemes": {
+    "backToMap": "ನಕ್ಷೆಗೆ ಹಿಂತಿರುಗಿ",
+    "description": "MyScheme.gov.in ನಿಂದ, ಸಾಮಾನ್ಯ ಗ್ರಾಮೀಣ ಆಂಧ್ರಪ್ರದೇಶ ರೈತನ ಅರ್ಹತೆಯ AI ಅಂದಾಜಿನೊಂದಿಗೆ.",
+    "state": "ರಾಜ್ಯ",
+    "categoryLabel": "ವರ್ಗ",
+    "filter": "ಫಿಲ್ಟರ್",
+    "loadError": "ಯೋಜನೆಗಳನ್ನು ಲೋಡ್ ಮಾಡಲಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+    "noResults": "ಈ ರಾಜ್ಯ ಮತ್ತು ವರ್ಗಕ್ಕೆ ಯೋಜನೆಗಳು ಕಂಡುಬಂದಿಲ್ಲ.",
+    "previous": "ಹಿಂದಿನ",
+    "next": "ಮುಂದಿನ",
+    "pageOf": "ಪುಟ {page} / {total}",
+    "eligibilityComingSoon": "AI ಅರ್ಹತೆ ಪರಿಶೀಲನೆ ಶೀಘ್ರದಲ್ಲಿ"
+  },
+  "mapView": {
+    "youAreHere": "ನೀವು ಇಲ್ಲಿ ಇದ್ದೀರಿ",
+    "unavailable": "ನಕ್ಷೆ ಲಭ್ಯವಿಲ್ಲ"
+  },
+  "voice": {
+    "speak": "ಮಾತನಾಡಿ",
+    "stop": "ನಿಲ್ಲಿಸಿ",
+    "errors": {
+      "rate_limited": "ಹೆಚ್ಚು ವಿನಂತಿಗಳು, ದಯವಿಟ್ಟು ಸ್ವಲ್ಪ ಸಮಯ ಕಾಯಿರಿ.",
+      "not_configured": "ವಾಯ್ಸ್ ಅಸಿಸ್ಟೆಂಟ್ ಇನ್ನೂ ಸಿದ್ಧವಾಗಿಲ್ಲ.",
+      "daily_limit_reached": "ವಾಯ್ಸ್ ಅಸಿಸ್ಟೆಂಟ್‌ನ ದೈನಂದಿನ ಮಿತಿ ತಲುಪಿದೆ. ದಯವಿಟ್ಟು ನಾಳೆ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+      "invalid_body": "ಏನೋ ತಪ್ಪಾಗಿದೆ, ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+      "missing_audio": "ಕೇಳಲು ಆಗಲಿಲ್ಲ, ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+      "recognition_failed": "ಅರ್ಥವಾಗಲಿಲ್ಲ, ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+      "mic_denied": "ವಾಯ್ಸ್ ಸರ್ಚ್‌ಗಾಗಿ ಮೈಕ್ರೋಫೋನ್ ಅನುಮತಿ ಬೇಕು."
+    }
+  }
+}

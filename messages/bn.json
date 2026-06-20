@@ -1,0 +1,87 @@
+{
+  "common": {
+    "appName": "RuralLink",
+    "governmentSchemes": "সরকারি প্রকল্প",
+    "schemes": "প্রকল্প",
+    "loadingMap": "ম্যাপ লোড হচ্ছে…"
+  },
+  "dashboard": {
+    "nearbyServices": "কাছাকাছি পরিষেবা",
+    "findingLocation": "আপনার অবস্থান খোঁজা হচ্ছে…",
+    "loadingServices": "কাছাকাছি পরিষেবা লোড হচ্ছে…",
+    "geolocationUnsupported": "এই ব্রাউজারে জিওলোকেশন সমর্থিত নয়।",
+    "locationDenied": "আপনার অবস্থান পাওয়া যায়নি। অনুগ্রহ করে অবস্থানের অনুমতি দিন।",
+    "servicesLoadError": "পরিষেবা লোড করা যায়নি। আবার চেষ্টা করুন।",
+    "noServicesFound": "{radius} কিমি এর মধ্যে কোনো পরিষেবা পাওয়া যায়নি।",
+    "retry": "আবার চেষ্টা করুন",
+    "noServicesMatchFilter": "নির্বাচিত বিভাগের সাথে মেলে এমন কোনো পরিষেবা নেই।"
+  },
+  "category": {
+    "hospital": "হাসপাতাল",
+    "clinic": "ক্লিনিক",
+    "bank": "ব্যাংক",
+    "atm": "এটিএম",
+    "school": "স্কুল",
+    "government": "সরকারি অফিস"
+  },
+  "status": {
+    "hoursUnknown": "সময় অজানা",
+    "openNow": "এখন খোলা আছে",
+    "closed": "বন্ধ আছে",
+    "schedule": "সময়: {hours}",
+    "helpline": "নম্বর তালিকাভুক্ত নেই — হেল্পলাইন: {number}",
+    "typicalHours": "সাধারণ সময় (আনুমানিক): {hours}",
+    "nearestAlternative": "নিকটতম পরিচিত: {name} — {phone}"
+  },
+  "aiTip": {
+    "comingSoon": "AI পরামর্শ আসছে",
+    "generating": "পরামর্শ তৈরি হচ্ছে…"
+  },
+  "distance": {
+    "meters": "{value} মি",
+    "kilometers": "{value} কিমি"
+  },
+  "languagePicker": {
+    "title": "আপনার ভাষা নির্বাচন করুন",
+    "suggested": "প্রস্তাবিত",
+    "close": "বন্ধ করুন"
+  },
+  "actions": {
+    "call": "কল করুন",
+    "viewOnMaps": "গুগল ম্যাপে দেখুন",
+    "showDetails": "বিবরণ দেখান",
+    "hideDetails": "বিবরণ লুকান",
+    "aiSuggested": "AI-প্রস্তাবিত — যাচাই করুন",
+    "apply": "আবেদন করুন"
+  },
+  "schemes": {
+    "backToMap": "মানচিত্রে ফিরে যান",
+    "description": "MyScheme.gov.in থেকে, একজন সাধারণ গ্রামীণ অন্ধ্রপ্রদেশ কৃষকের যোগ্যতার AI অনুমান সহ।",
+    "state": "রাজ্য",
+    "categoryLabel": "বিভাগ",
+    "filter": "ফিল্টার",
+    "loadError": "প্রকল্প লোড করা যায়নি। আবার চেষ্টা করুন।",
+    "noResults": "এই রাজ্য এবং বিভাগের জন্য কোনো প্রকল্প পাওয়া যায়নি।",
+    "previous": "পূর্ববর্তী",
+    "next": "পরবর্তী",
+    "pageOf": "পৃষ্ঠা {page} / {total}",
+    "eligibilityComingSoon": "AI যোগ্যতা যাচাই আসছে"
+  },
+  "mapView": {
+    "youAreHere": "আপনি এখানে আছেন",
+    "unavailable": "ম্যাপ উপলব্ধ নেই"
+  },
+  "voice": {
+    "speak": "বলুন",
+    "stop": "থামুন",
+    "errors": {
+      "rate_limited": "অনেক বেশি অনুরোধ, কিছুক্ষণ অপেক্ষা করুন।",
+      "not_configured": "ভয়েস সহায়ক এখনও সেট করা হয়নি।",
+      "daily_limit_reached": "ভয়েস সহায়কের দৈনিক সীমা পূর্ণ হয়েছে। আগামীকাল আবার চেষ্টা করুন।",
+      "invalid_body": "কিছু ভুল হয়েছে, আবার চেষ্টা করুন।",
+      "missing_audio": "শুনতে পারিনি, আবার চেষ্টা করুন।",
+      "recognition_failed": "বুঝতে পারিনি, আবার চেষ্টা করুন।",
+      "mic_denied": "ভয়েস সার্চের জন্য মাইক্রোফোন অনুমতি প্রয়োজন।"
+    }
+  }
+}

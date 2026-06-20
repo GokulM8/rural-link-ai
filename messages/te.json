@@ -1,0 +1,87 @@
+{
+  "common": {
+    "appName": "RuralLink",
+    "governmentSchemes": "ప్రభుత్వ పథకాలు",
+    "schemes": "పథకాలు",
+    "loadingMap": "మ్యాప్ లోడ్ అవుతోంది…"
+  },
+  "dashboard": {
+    "nearbyServices": "సమీప సేవలు",
+    "findingLocation": "మీ స్థానాన్ని కనుగొంటోంది…",
+    "loadingServices": "సమీప సేవలను లోడ్ చేస్తోంది…",
+    "geolocationUnsupported": "ఈ బ్రౌజర్‌లో జియోలొకేషన్‌కు మద్దతు లేదు.",
+    "locationDenied": "మీ స్థానాన్ని పొందలేకపోయాం. దయచేసి స్థాన అనుమతిని ఇవ్వండి.",
+    "servicesLoadError": "సమీప సేవలను లోడ్ చేయలేకపోయాం. దయచేసి మళ్లీ ప్రయత్నించండి.",
+    "noServicesFound": "{radius} కి.మీ పరిధిలో సేవలు కనుగొనబడలేదు.",
+    "retry": "మళ్లీ ప్రయత్నించండి",
+    "noServicesMatchFilter": "ఎంచుకున్న వర్గాలకు సరిపోలే సేవలు లేవు."
+  },
+  "category": {
+    "hospital": "ఆసుపత్రి",
+    "clinic": "క్లినిక్",
+    "bank": "బ్యాంక్",
+    "atm": "ఏటీఎం",
+    "school": "పాఠశాల",
+    "government": "ప్రభుత్వ కార్యాలయం"
+  },
+  "status": {
+    "hoursUnknown": "సమయాలు తెలియదు",
+    "openNow": "ఇప్పుడు తెరిచి ఉంది",
+    "closed": "మూసివేయబడింది",
+    "schedule": "సమయాలు: {hours}",
+    "helpline": "నంబర్ లేదు — హెల్ప్‌లైన్: {number}",
+    "typicalHours": "సాధారణ సమయాలు (అంచనా): {hours}",
+    "nearestAlternative": "సమీప తెలిసిన: {name} — {phone}"
+  },
+  "aiTip": {
+    "comingSoon": "AI సలహా త్వరలో వస్తుంది",
+    "generating": "సలహా తయారు చేస్తోంది…"
+  },
+  "distance": {
+    "meters": "{value} మీ",
+    "kilometers": "{value} కి.మీ"
+  },
+  "languagePicker": {
+    "title": "మీ భాషను ఎంచుకోండి",
+    "suggested": "సూచించబడింది",
+    "close": "మూసివేయి"
+  },
+  "actions": {
+    "call": "కాల్ చేయండి",
+    "viewOnMaps": "గూగుల్ మ్యాప్స్‌లో చూడండి",
+    "showDetails": "వివరాలు చూపించు",
+    "hideDetails": "వివరాలు దాచు",
+    "aiSuggested": "AI-సూచించినది — దయచేసి నిర్ధారించుకోండి",
+    "apply": "దరఖాస్తు చేయండి"
+  },
+  "schemes": {
+    "backToMap": "మ్యాప్‌కు తిరిగి వెళ్లండి",
+    "description": "MyScheme.gov.in నుండి, ఒక సాధారణ గ్రామీణ ఆంధ్రప్రదేశ్ రైతు అర్హత గురించి AI అంచనాతో.",
+    "state": "రాష్ట్రం",
+    "categoryLabel": "వర్గం",
+    "filter": "ఫిల్టర్",
+    "loadError": "పథకాలను లోడ్ చేయలేకపోయాం. దయచేసి మళ్లీ ప్రయత్నించండి.",
+    "noResults": "ఈ రాష్ట్రం మరియు వర్గానికి పథకాలు కనుగొనబడలేదు.",
+    "previous": "మునుపటి",
+    "next": "తదుపరి",
+    "pageOf": "పేజీ {page} / {total}",
+    "eligibilityComingSoon": "AI అర్హత తనిఖీ త్వరలో వస్తుంది"
+  },
+  "mapView": {
+    "youAreHere": "మీరు ఇక్కడ ఉన్నారు",
+    "unavailable": "మ్యాప్ అందుబాటులో లేదు"
+  },
+  "voice": {
+    "speak": "మాట్లాడండి",
+    "stop": "ఆపు",
+    "errors": {
+      "rate_limited": "చాలా రిక్వెస్ట్‌లు వచ్చాయి, దయచేసి కొద్దిసేపు వేచి ఉండండి.",
+      "not_configured": "వాయిస్ అసిస్టెంట్ ఇంకా సెటప్ చేయలేదు.",
+      "daily_limit_reached": "వాయిస్ అసిస్టెంట్ రోజువారీ పరిమితిని చేరుకుంది. దయచేసి రేపు మళ్లీ ప్రయత్నించండి.",
+      "invalid_body": "ఏదో తప్పు జరిగింది, దయచేసి మళ్లీ ప్రయత్నించండి.",
+      "missing_audio": "వినలేకపోయాను, దయచేసి మళ్లీ ప్రయత్నించండి.",
+      "recognition_failed": "అర్థం కాలేదు, దయచేసి మళ్లీ ప్రయత్నించండి.",
+      "mic_denied": "వాయిస్ సెర్చ్ కోసం మైక్రోఫోన్ అనుమతి అవసరం."
+    }
+  }
+}

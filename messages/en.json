@@ -1,0 +1,87 @@
+{
+  "common": {
+    "appName": "RuralLink",
+    "governmentSchemes": "Government Schemes",
+    "schemes": "Schemes",
+    "loadingMap": "Loading map…"
+  },
+  "dashboard": {
+    "nearbyServices": "Nearby services",
+    "findingLocation": "Finding your location…",
+    "loadingServices": "Loading nearby services…",
+    "geolocationUnsupported": "Geolocation is not supported in this browser.",
+    "locationDenied": "Couldn't get your location. Please allow location access.",
+    "servicesLoadError": "Couldn't load nearby services. Please try again.",
+    "noServicesFound": "No services found within {radius} km.",
+    "retry": "Try again",
+    "noServicesMatchFilter": "No services match the selected categories."
+  },
+  "category": {
+    "hospital": "Hospital",
+    "clinic": "Clinic",
+    "bank": "Bank",
+    "atm": "ATM",
+    "school": "School",
+    "government": "Government"
+  },
+  "status": {
+    "hoursUnknown": "Hours unknown",
+    "openNow": "Open now",
+    "closed": "Closed",
+    "schedule": "Hours: {hours}",
+    "helpline": "No listed number — helpline: {number}",
+    "typicalHours": "Typical hours (estimated): {hours}",
+    "nearestAlternative": "Nearest known: {name} — {phone}"
+  },
+  "aiTip": {
+    "comingSoon": "AI tip coming soon",
+    "generating": "Generating tip…"
+  },
+  "distance": {
+    "meters": "{value} m",
+    "kilometers": "{value} km"
+  },
+  "languagePicker": {
+    "title": "Choose your language",
+    "suggested": "Suggested",
+    "close": "Close"
+  },
+  "actions": {
+    "call": "Call",
+    "viewOnMaps": "View on Google Maps",
+    "showDetails": "Show details",
+    "hideDetails": "Hide details",
+    "aiSuggested": "AI-suggested — please verify",
+    "apply": "Apply"
+  },
+  "schemes": {
+    "backToMap": "Back to map",
+    "description": "From MyScheme.gov.in, with an AI estimate of whether a typical rural Andhra Pradesh farmer would qualify.",
+    "state": "State",
+    "categoryLabel": "Category",
+    "filter": "Filter",
+    "loadError": "Couldn't load schemes right now. Please try again.",
+    "noResults": "No schemes found for this state and category.",
+    "previous": "Previous",
+    "next": "Next",
+    "pageOf": "Page {page} of {total}",
+    "eligibilityComingSoon": "AI eligibility check coming soon"
+  },
+  "mapView": {
+    "youAreHere": "You are here",
+    "unavailable": "Map unavailable"
+  },
+  "voice": {
+    "speak": "Speak",
+    "stop": "Stop",
+    "errors": {
+      "rate_limited": "Too many requests, please wait a moment.",
+      "not_configured": "Voice assistant isn't set up yet.",
+      "daily_limit_reached": "Voice assistant has reached its daily limit. Please try again tomorrow.",
+      "invalid_body": "Something went wrong, please try again.",
+      "missing_audio": "Didn't catch that, please try again.",
+      "recognition_failed": "Couldn't understand that, please try again.",
+      "mic_denied": "Microphone access is needed for voice search."
+    }
+  }
+}

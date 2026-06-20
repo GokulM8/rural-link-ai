@@ -1,0 +1,87 @@
+{
+  "common": {
+    "appName": "RuralLink",
+    "governmentSchemes": "ସରକାରୀ ଯୋଜନା",
+    "schemes": "ଯୋଜନା",
+    "loadingMap": "ମାନଚିତ୍ର ଲୋଡ୍ ହେଉଛି…"
+  },
+  "dashboard": {
+    "nearbyServices": "ନିକଟସ୍ଥ ସେବାଗୁଡ଼ିକ",
+    "findingLocation": "ଆପଣଙ୍କ ସ୍ଥାନ ଖୋଜୁଛି…",
+    "loadingServices": "ନିକଟସ୍ଥ ସେବାଗୁଡ଼ିକ ଲୋଡ୍ ହେଉଛି…",
+    "geolocationUnsupported": "ଏହି ବ୍ରାଉଜରରେ ଜିଓଲୋକେସନ୍ ସମର୍ଥିତ ନୁହେଁ।",
+    "locationDenied": "ଆପଣଙ୍କ ସ୍ଥାନ ପ୍ରାପ୍ତ ହୋଇପାରିଲା ନାହିଁ। ଦୟାକରି ସ୍ଥାନ ଅନୁମତି ଦିଅନ୍ତୁ।",
+    "servicesLoadError": "ସେବାଗୁଡ଼ିକ ଲୋଡ୍ ହୋଇପାରିଲା ନାହିଁ। ଦୟାକରି ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ।",
+    "noServicesFound": "{radius} କିମି ମଧ୍ୟରେ କୌଣସି ସେବା ମିଳିଲା ନାହିଁ।",
+    "retry": "ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ",
+    "noServicesMatchFilter": "ବାଛିଥିବା ବର୍ଗ ସହିତ ମେଳ ଖାଉଥିବା କୌଣସି ସେବା ନାହିଁ।"
+  },
+  "category": {
+    "hospital": "ଡାକ୍ତରଖାନା",
+    "clinic": "କ୍ଲିନିକ୍",
+    "bank": "ବ୍ୟାଙ୍କ",
+    "atm": "ଏଟିଏମ୍",
+    "school": "ବିଦ୍ୟାଳୟ",
+    "government": "ସରକାରୀ କାର୍ଯ୍ୟାଳୟ"
+  },
+  "status": {
+    "hoursUnknown": "ସମୟ ଅଜଣା",
+    "openNow": "ବର୍ତ୍ତମାନ ଖୋଲା ଅଛି",
+    "closed": "ବନ୍ଦ ଅଛି",
+    "schedule": "ସମୟ: {hours}",
+    "helpline": "ନମ୍ବର ତାଲିକାଭୁକ୍ତ ନାହିଁ — ହେଲ୍ପଲାଇନ୍: {number}",
+    "typicalHours": "ସାଧାରଣ ସମୟ (ଆକଳନ): {hours}",
+    "nearestAlternative": "ନିକଟସ୍ଥ ଜଣାଶୁଣା: {name} — {phone}"
+  },
+  "aiTip": {
+    "comingSoon": "AI ପରାମର୍ଶ ଆସୁଛି",
+    "generating": "ପରାମର୍ଶ ତୈଯାର ହେଉଛି…"
+  },
+  "distance": {
+    "meters": "{value} ମି",
+    "kilometers": "{value} କିମି"
+  },
+  "languagePicker": {
+    "title": "ଆପଣଙ୍କ ଭାଷା ବାଛନ୍ତୁ",
+    "suggested": "ପ୍ରସ୍ତାବିତ",
+    "close": "ବନ୍ଦ କରନ୍ତୁ"
+  },
+  "actions": {
+    "call": "କଲ୍ କରନ୍ତୁ",
+    "viewOnMaps": "ଗୁଗଲ୍ ମାନଚିତ୍ରରେ ଦେଖନ୍ତୁ",
+    "showDetails": "ବିବରଣୀ ଦେଖାନ୍ତୁ",
+    "hideDetails": "ବିବରଣୀ ଲୁଚାନ୍ତୁ",
+    "aiSuggested": "AI-ପ୍ରସ୍ତାବିତ — ଦୟାକରି ଯାଞ୍ଚ କରନ୍ତୁ",
+    "apply": "ଆବେଦନ କରନ୍ତୁ"
+  },
+  "schemes": {
+    "backToMap": "ମାନଚିତ୍ରକୁ ଫେରନ୍ତୁ",
+    "description": "MyScheme.gov.in ରୁ, ଏକ ସାଧାରଣ ଗ୍ରାମୀଣ ଆନ୍ଧ୍ରପ୍ରଦେଶ କୃଷକର ଯୋଗ୍ୟତାର AI ଆକଳନ ସହିତ।",
+    "state": "ରାଜ୍ୟ",
+    "categoryLabel": "ବର୍ଗ",
+    "filter": "ଫିଲ୍ଟର୍",
+    "loadError": "ଯୋଜନା ଲୋଡ୍ ହୋଇପାରିଲା ନାହିଁ। ଦୟାକରି ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ।",
+    "noResults": "ଏହି ରାଜ୍ୟ ଏବଂ ବର୍ଗ ପାଇଁ କୌଣସି ଯୋଜନା ମିଳିଲା ନାହିଁ।",
+    "previous": "ପୂର୍ବବର୍ତ୍ତୀ",
+    "next": "ପରବର୍ତ୍ତୀ",
+    "pageOf": "ପୃଷ୍ଠା {page} / {total}",
+    "eligibilityComingSoon": "AI ଯୋଗ୍ୟତା ଯାଞ୍ଚ ଆସୁଛି"
+  },
+  "mapView": {
+    "youAreHere": "ଆପଣ ଏଠାରେ ଅଛନ୍ତି",
+    "unavailable": "ମାନଚିତ୍ର ଉପଲବ୍ଧ ନାହିଁ"
+  },
+  "voice": {
+    "speak": "କୁହନ୍ତୁ",
+    "stop": "ବନ୍ଦ କରନ୍ତୁ",
+    "errors": {
+      "rate_limited": "ଅନେକ ଅନୁରୋଧ, ଦୟାକରି କିଛି ସମୟ ଅପେକ୍ଷା କରନ୍ତୁ।",
+      "not_configured": "ଭଏସ୍ ସହାୟକ ଏପର୍ଯ୍ୟନ୍ତ ସେଟ୍ ହୋଇନାହିଁ।",
+      "daily_limit_reached": "ଭଏସ୍ ସହାୟକର ଦୈନିକ ସୀମା ପୂରଣ ହୋଇଛି। ଦୟାକରି ଆସନ୍ତାକାଲି ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ।",
+      "invalid_body": "କିଛି ଭୁଲ ହୋଇଛି, ଦୟାକରି ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ।",
+      "missing_audio": "ଶୁଣି ପାରିଲି ନାହିଁ, ଦୟାକରି ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ।",
+      "recognition_failed": "ବୁଝି ପାରିଲି ନାହିଁ, ଦୟାକରି ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ।",
+      "mic_denied": "ଭଏସ୍ ସର୍ଚ୍ଚ ପାଇଁ ମାଇକ୍ରୋଫୋନ୍ ଅନୁମତି ଆବଶ୍ୟକ।"
+    }
+  }
+}
