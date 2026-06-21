@@ -21,7 +21,9 @@
   "search": {
     "placeholder": "স্থান খুঁজুন…",
     "radius": "ব্যাসার্ধ",
-    "notFound": "সেই স্থান পাওয়া যায়নি।"
+    "notFound": "সেই স্থান পাওয়া যায়নি।",
+    "useCurrentLocation": "বর্তমান অবস্থান ব্যবহার করুন",
+    "locationError": "আপনার অবস্থান পাওয়া যায়নি।"
   },
   "category": {
     "hospital": "হাসপাতাল",

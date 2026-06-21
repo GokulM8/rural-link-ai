@@ -21,7 +21,9 @@
   "search": {
     "placeholder": "स्थान खोजें…",
     "radius": "दायरा",
-    "notFound": "वह स्थान नहीं मिला।"
+    "notFound": "वह स्थान नहीं मिला।",
+    "useCurrentLocation": "वर्तमान स्थान का उपयोग करें",
+    "locationError": "आपका स्थान प्राप्त नहीं हो सका।"
   },
   "category": {
     "hospital": "अस्पताल",

@@ -21,7 +21,9 @@
   "search": {
     "placeholder": "స్థానం వెతకండి…",
     "radius": "పరిధి",
-    "notFound": "ఆ స్థలం కనుగొనబడలేదు."
+    "notFound": "ఆ స్థలం కనుగొనబడలేదు.",
+    "useCurrentLocation": "ప్రస్తుత స్థానాన్ని ఉపయోగించండి",
+    "locationError": "మీ స్థానం పొందలేకపోయాము."
   },
   "category": {
     "hospital": "ఆసుపత్రి",

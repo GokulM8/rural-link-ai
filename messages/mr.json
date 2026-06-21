@@ -21,7 +21,9 @@
   "search": {
     "placeholder": "स्थान शोधा…",
     "radius": "परिसर",
-    "notFound": "ते स्थान सापडले नाही."
+    "notFound": "ते स्थान सापडले नाही.",
+    "useCurrentLocation": "सध्याचे स्थान वापरा",
+    "locationError": "तुमचे स्थान मिळू शकले नाही."
   },
   "category": {
     "hospital": "रुग्णालय",

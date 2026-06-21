@@ -80,8 +80,10 @@ export default function MapView({ userLocation, services, selectedId, onSelect, 
 
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
+  const userMarkerRef = useRef<mapboxgl.Marker | null>(null);
   const markersRef = useRef<Map<number, mapboxgl.Marker>>(new Map());
   const dotsRef = useRef<Map<number, HTMLDivElement>>(new Map());
+  const isFirstLocation = useRef(true);
 
   useEffect(() => {
     handleRef.current = {
@@ -118,7 +120,7 @@ export default function MapView({ userLocation, services, selectedId, onSelect, 
     // changes — rebuilding the whole map instance just to refresh a popup
     // that's only visible if the user clicks their own location pin isn't
     // worth the jarring full-map flicker that would cause.
-    new mapboxgl.Marker({ color: "#1D9E75" })
+    userMarkerRef.current = new mapboxgl.Marker({ color: "#1D9E75" })
       .setLngLat([userLocation.lng, userLocation.lat])
       .setPopup(new mapboxgl.Popup().setText(t("youAreHere")))
       .addTo(map);
@@ -126,9 +128,24 @@ export default function MapView({ userLocation, services, selectedId, onSelect, 
     return () => {
       map.remove();
       mapRef.current = null;
+      userMarkerRef.current = null;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // Re-centers (and moves the "you are here" pin) whenever the location
+  // changes after mount — e.g. the search panel's free-text geocode result,
+  // or the "use current location" button, both of which just update this
+  // prop rather than calling the imperative recenter handle directly. Skips
+  // the very first run since the mount effect above already centers there.
+  useEffect(() => {
+    if (isFirstLocation.current) {
+      isFirstLocation.current = false;
+      return;
+    }
+    userMarkerRef.current?.setLngLat([userLocation.lng, userLocation.lat]);
+    mapRef.current?.flyTo({ center: [userLocation.lng, userLocation.lat], zoom: 14, essential: true });
+  }, [userLocation]);
 
   // The map-creation effect above only runs once, before `mounted` flips
   // true — so the map always starts on the dark style and this effect

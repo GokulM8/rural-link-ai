@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { CircleDashed, Loader2, Search } from "lucide-react";
+import { CircleDashed, LocateFixed, Loader2, Search } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_API_KEY;
@@ -20,6 +20,8 @@ export default function SearchPanel({ radiusKm, onRadiusChange, onLocationFound 
   const [query, setQuery] = useState("");
   const [isSearching, setIsSearching] = useState(false);
   const [searchFailed, setSearchFailed] = useState(false);
+  const [isLocating, setIsLocating] = useState(false);
+  const [locationFailed, setLocationFailed] = useState(false);
 
   const handleSearch = useCallback(async () => {
     const trimmed = query.trim();
@@ -48,6 +50,31 @@ export default function SearchPanel({ radiusKm, onRadiusChange, onLocationFound 
     }
   }, [query, onLocationFound]);
 
+  // Re-detects the device's GPS location on demand — distinct from
+  // MapControls' "My location" button, which just re-centers on whatever
+  // coords were already found at page load (no new browser prompt/lookup).
+  const handleUseCurrentLocation = useCallback(() => {
+    if (!("geolocation" in navigator)) {
+      setLocationFailed(true);
+      return;
+    }
+
+    setIsLocating(true);
+    setLocationFailed(false);
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        setIsLocating(false);
+        setQuery("");
+        setSearchFailed(false);
+        onLocationFound({ lat: position.coords.latitude, lng: position.coords.longitude });
+      },
+      () => {
+        setIsLocating(false);
+        setLocationFailed(true);
+      }
+    );
+  }, [onLocationFound]);
+
   const cycleRadius = useCallback(() => {
     const currentIndex = RADIUS_OPTIONS_KM.indexOf(radiusKm);
     const next = RADIUS_OPTIONS_KM[(currentIndex + 1) % RADIUS_OPTIONS_KM.length];
@@ -74,8 +101,24 @@ export default function SearchPanel({ radiusKm, onRadiusChange, onLocationFound 
           placeholder={t("placeholder")}
           className="min-w-0 flex-1 bg-transparent text-[13px] text-[var(--text-2)] placeholder:text-[var(--text-4)] focus:outline-none"
         />
+        <div className="h-3.5 w-px shrink-0 bg-[var(--border-subtle)]" />
+        <button
+          type="button"
+          onClick={handleUseCurrentLocation}
+          disabled={isLocating}
+          aria-label={t("useCurrentLocation")}
+          title={t("useCurrentLocation")}
+          className="shrink-0 text-[#1D9E75] transition hover:text-[#177F5E] disabled:pointer-events-none disabled:opacity-50"
+        >
+          {isLocating ? (
+            <Loader2 className="h-3.5 w-3.5 animate-spin" strokeWidth={1.75} />
+          ) : (
+            <LocateFixed className="h-3.5 w-3.5" strokeWidth={1.75} />
+          )}
+        </button>
       </form>
       {searchFailed && <p className="mt-1 px-1 text-[11px] text-red-400">{t("notFound")}</p>}
+      {locationFailed && <p className="mt-1 px-1 text-[11px] text-red-400">{t("locationError")}</p>}
 
       <button
         type="button"

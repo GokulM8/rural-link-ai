@@ -21,7 +21,9 @@
   "search": {
     "placeholder": "Search location…",
     "radius": "Radius",
-    "notFound": "Couldn't find that place."
+    "notFound": "Couldn't find that place.",
+    "useCurrentLocation": "Use current location",
+    "locationError": "Couldn't get your location."
   },
   "category": {
     "hospital": "Hospital",

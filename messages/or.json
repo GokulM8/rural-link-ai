@@ -21,7 +21,9 @@
   "search": {
     "placeholder": "ସ୍ଥାନ ଖୋଜନ୍ତୁ…",
     "radius": "ପରିସର",
-    "notFound": "ସେହି ସ୍ଥାନ ମିଳିଲା ନାହିଁ।"
+    "notFound": "ସେହି ସ୍ଥାନ ମିଳିଲା ନାହିଁ।",
+    "useCurrentLocation": "ବର୍ତ୍ତମାନ ସ୍ଥାନ ବ୍ୟବହାର କରନ୍ତୁ",
+    "locationError": "ଆପଣଙ୍କ ସ୍ଥାନ ପ୍ରାପ୍ତ ହୋଇପାରିଲା ନାହିଁ।"
   },
   "category": {
     "hospital": "ଡାକ୍ତରଖାନା",

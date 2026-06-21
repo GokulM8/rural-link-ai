@@ -21,7 +21,9 @@
   "search": {
     "placeholder": "ಸ್ಥಳವನ್ನು ಹುಡುಕಿ…",
     "radius": "ವ್ಯಾಪ್ತಿ",
-    "notFound": "ಆ ಸ್ಥಳ ಕಂಡುಬಂದಿಲ್ಲ."
+    "notFound": "ಆ ಸ್ಥಳ ಕಂಡುಬಂದಿಲ್ಲ.",
+    "useCurrentLocation": "ಪ್ರಸ್ತುತ ಸ್ಥಳವನ್ನು ಬಳಸಿ",
+    "locationError": "ನಿಮ್ಮ ಸ್ಥಳವನ್ನು ಪಡೆಯಲಾಗಲಿಲ್ಲ."
   },
   "category": {
     "hospital": "ಆಸ್ಪತ್ರೆ",
