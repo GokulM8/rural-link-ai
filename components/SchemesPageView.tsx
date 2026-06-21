@@ -11,6 +11,7 @@ import FilterCard from "@/components/FilterCard";
 import CategoryListCard from "@/components/CategoryListCard";
 import StatCards from "@/components/StatCards";
 import ResultsPanel from "@/components/ResultsPanel";
+import SchemeAnalytics from "@/components/SchemeAnalytics";
 
 export interface SchemesPageViewProps {
   state: string;
@@ -108,7 +109,7 @@ export default function SchemesPageView({
         </a>
       </div>
 
-      <div className="grid grid-cols-1 gap-3 p-4 md:absolute md:inset-x-4 md:top-20 md:bottom-4 md:grid-cols-[260px_1fr] md:gap-3 md:p-0">
+      <div className="grid grid-cols-1 gap-3 p-4 md:absolute md:inset-x-4 md:top-20 md:bottom-4 md:grid-cols-[260px_1fr_320px] md:gap-3 md:p-0">
         <div className="flex flex-col gap-3">
           <FilterCard
             state={state}
@@ -157,6 +158,10 @@ export default function SchemesPageView({
             </ResultsPanel>
           )}
           {pagination}
+        </div>
+
+        <div className="min-h-0 overflow-y-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <SchemeAnalytics />
         </div>
       </div>
     </div>
