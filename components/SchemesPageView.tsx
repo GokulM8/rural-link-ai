@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback } from "react";
+import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, ChevronLeft, ChevronRight, Inbox } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -11,7 +12,24 @@ import FilterCard from "@/components/FilterCard";
 import CategoryListCard from "@/components/CategoryListCard";
 import StatCards from "@/components/StatCards";
 import ResultsPanel from "@/components/ResultsPanel";
-import SchemeAnalytics from "@/components/SchemeAnalytics";
+
+// Recharts alone is ~115KB — code-split into its own chunk so it loads
+// after the page is already interactive, instead of blocking hydration of
+// everything else on /schemes (filters, category nav, results) behind it.
+const SchemeAnalytics = dynamic(() => import("@/components/SchemeAnalytics"), {
+  ssr: false,
+  loading: () => (
+    <div className="flex flex-col gap-3 rounded-[14px] border border-[var(--border-subtle)] bg-[var(--surface-1)]/95 p-3.5">
+      <div className="grid grid-cols-3 gap-2">
+        {[0, 1, 2].map((i) => (
+          <div key={i} className="h-[58px] animate-pulse rounded-[10px] border border-[var(--border-subtle)] bg-[var(--surface-2)]" />
+        ))}
+      </div>
+      <div className="h-8 animate-pulse rounded-lg border border-[var(--border-subtle)] bg-[var(--surface-3)]" />
+      <div className="h-[190px] animate-pulse rounded-[10px] bg-[var(--surface-2)]" />
+    </div>
+  ),
+});
 
 export interface SchemesPageViewProps {
   state: string;
