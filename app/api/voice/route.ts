@@ -1,14 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
-import { recognizeVoiceIntent, getConfiguredVoiceKeyCount } from "@/lib/voiceAssistant";
+import { recognizeVoiceIntent, getConfiguredVoiceKeyCount, type VoiceDomain } from "@/lib/voiceAssistant";
 import { tryConsumeVoiceQuota } from "@/lib/voiceQuota";
 import { checkRateLimit, getClientIp } from "@/lib/rateLimit";
+
+const VALID_DOMAINS = new Set<string>(["services", "schemes"]);
 
 // Never let Next.js cache and replay a stale voice response.
 export const dynamic = "force-dynamic";
 
 // Recording + uploading takes a few seconds per turn, so this only guards
 // against actual abuse — the real ceiling is the global daily quota below.
-const RATE_LIMIT_PER_IP = 6;
+// Kept generous since a person trying the feature will naturally click it
+// several times in a row.
+const RATE_LIMIT_PER_IP = 20;
 const RATE_LIMIT_WINDOW_MS = 60 * 1000;
 const DAILY_LIMIT_PER_KEY = 20;
 
@@ -31,7 +35,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "daily_limit_reached" }, { status: 503 });
   }
 
-  let body: { audio?: string; mimeType?: string };
+  let body: { audio?: string; mimeType?: string; domain?: string };
   try {
     body = await request.json();
   } catch {
@@ -42,7 +46,8 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "missing_audio" }, { status: 400 });
   }
 
-  const result = await recognizeVoiceIntent(body.audio, body.mimeType);
+  const domain: VoiceDomain = body.domain && VALID_DOMAINS.has(body.domain) ? (body.domain as VoiceDomain) : "services";
+  const result = await recognizeVoiceIntent(body.audio, body.mimeType, domain);
   if (!result) {
     return NextResponse.json({ error: "recognition_failed" }, { status: 502 });
   }

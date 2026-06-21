@@ -3,7 +3,8 @@
     "appName": "RuralLink",
     "governmentSchemes": "সরকারি প্রকল্প",
     "schemes": "প্রকল্প",
-    "loadingMap": "ম্যাপ লোড হচ্ছে…"
+    "loadingMap": "ম্যাপ লোড হচ্ছে…",
+    "menu": "মেনু"
   },
   "dashboard": {
     "nearbyServices": "কাছাকাছি পরিষেবা",
@@ -14,7 +15,13 @@
     "servicesLoadError": "পরিষেবা লোড করা যায়নি। আবার চেষ্টা করুন।",
     "noServicesFound": "{radius} কিমি এর মধ্যে কোনো পরিষেবা পাওয়া যায়নি।",
     "retry": "আবার চেষ্টা করুন",
-    "noServicesMatchFilter": "নির্বাচিত বিভাগের সাথে মেলে এমন কোনো পরিষেবা নেই।"
+    "noServicesMatchFilter": "নির্বাচিত বিভাগের সাথে মেলে এমন কোনো পরিষেবা নেই।",
+    "foundCount": "{count}টি পাওয়া গেছে"
+  },
+  "search": {
+    "placeholder": "স্থান খুঁজুন…",
+    "radius": "ব্যাসার্ধ",
+    "notFound": "সেই স্থান পাওয়া যায়নি।"
   },
   "category": {
     "hospital": "হাসপাতাল",
@@ -65,11 +72,21 @@
     "previous": "পূর্ববর্তী",
     "next": "পরবর্তী",
     "pageOf": "পৃষ্ঠা {page} / {total}",
-    "eligibilityComingSoon": "AI যোগ্যতা যাচাই আসছে"
+    "eligibilityComingSoon": "AI যোগ্যতা যাচাই আসছে",
+    "occupationLabel": "সুবিধাভোগী",
+    "allOccupations": "সব",
+    "filtersHeading": "ফিল্টার",
+    "categoriesHeading": "বিভাগ",
+    "schemesFound": "প্রকল্প পাওয়া গেছে",
+    "likelyEligible": "যোগ্য হওয়ার সম্ভাবনা",
+    "resultsCount": "{count}টি ফলাফল"
   },
   "mapView": {
     "youAreHere": "আপনি এখানে আছেন",
-    "unavailable": "ম্যাপ উপলব্ধ নেই"
+    "unavailable": "ম্যাপ উপলব্ধ নেই",
+    "zoomIn": "জুম ইন",
+    "zoomOut": "জুম আউট",
+    "myLocation": "আমার অবস্থান"
   },
   "voice": {
     "speak": "বলুন",
@@ -82,6 +99,55 @@
       "missing_audio": "শুনতে পারিনি, আবার চেষ্টা করুন।",
       "recognition_failed": "বুঝতে পারিনি, আবার চেষ্টা করুন।",
       "mic_denied": "ভয়েস সার্চের জন্য মাইক্রোফোন অনুমতি প্রয়োজন।"
+    },
+    "bar": {
+      "title": "আপনার ভাষায় বলুন।",
+      "subtitle": "আপনার যা প্রয়োজন তা পান।"
+    }
+  },
+  "auth": {
+    "login": "লগ ইন করুন",
+    "phoneLabel": "মোবাইল নম্বর",
+    "phonePlaceholder": "98765 43210",
+    "sendOtp": "OTP পাঠান",
+    "enterOtp": "{phone}-এ পাঠানো OTP লিখুন",
+    "verify": "যাচাই করুন",
+    "resendOtp": "OTP আবার পাঠান",
+    "changeNumber": "নম্বর পরিবর্তন করুন",
+    "emailLabel": "ইমেইল (ঐচ্ছিক)",
+    "emailPlaceholder": "you@example.com",
+    "save": "সংরক্ষণ করুন",
+    "skip": "এড়িয়ে যান",
+    "addEmail": "ইমেইল যুক্ত করুন",
+    "logout": "লগ আউট করুন",
+    "errors": {
+      "invalid_phone": "একটি বৈধ ১০ সংখ্যার মোবাইল নম্বর লিখুন।",
+      "rate_limited": "অনেক বেশি চেষ্টা। কিছুক্ষণ পর আবার চেষ্টা করুন।",
+      "not_requested": "প্রথমে একটি নতুন OTP চান।",
+      "expired": "এই OTP-এর মেয়াদ শেষ হয়ে গেছে। নতুন OTP চান।",
+      "too_many_attempts": "অনেক বেশি ভুল চেষ্টা। নতুন OTP চান।",
+      "invalid_code": "ভুল OTP। আবার চেষ্টা করুন।",
+      "invalid_email": "একটি বৈধ ইমেইল ঠিকানা লিখুন।",
+      "send_failed": "OTP পাঠানো যায়নি। আবার চেষ্টা করুন।",
+      "generic": "কিছু ভুল হয়েছে। আবার চেষ্টা করুন।"
+    }
+  },
+  "theme": {
+    "toggle": "থিম পরিবর্তন করুন",
+    "label": "থিম",
+    "system": "সিস্টেম",
+    "light": "লাইট",
+    "dark": "ডার্ক"
+  },
+  "hero": {
+    "greeting": "নমস্কার!",
+    "question": "আজ আমি আপনাকে কীভাবে সাহায্য করতে পারি?",
+    "subtitle": "কাছাকাছি পরিষেবা দেখুন বা আমাদের AI সহায়কের সাথে কথা বলুন।",
+    "searchPlaceholder": "কাছাকাছি পরিষেবা খুঁজুন",
+    "features": {
+      "voiceAssistant": "AI ভয়েস সহায়ক",
+      "multiLanguage": "বহু-ভাষা সমর্থন",
+      "ruralCommunities": "গ্রামীণ সম্প্রদায়ের জন্য"
     }
   }
 }

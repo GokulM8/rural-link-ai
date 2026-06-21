@@ -3,7 +3,8 @@
     "appName": "RuralLink",
     "governmentSchemes": "ସରକାରୀ ଯୋଜନା",
     "schemes": "ଯୋଜନା",
-    "loadingMap": "ମାନଚିତ୍ର ଲୋଡ୍ ହେଉଛି…"
+    "loadingMap": "ମାନଚିତ୍ର ଲୋଡ୍ ହେଉଛି…",
+    "menu": "ମେନୁ"
   },
   "dashboard": {
     "nearbyServices": "ନିକଟସ୍ଥ ସେବାଗୁଡ଼ିକ",
@@ -14,7 +15,13 @@
     "servicesLoadError": "ସେବାଗୁଡ଼ିକ ଲୋଡ୍ ହୋଇପାରିଲା ନାହିଁ। ଦୟାକରି ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ।",
     "noServicesFound": "{radius} କିମି ମଧ୍ୟରେ କୌଣସି ସେବା ମିଳିଲା ନାହିଁ।",
     "retry": "ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ",
-    "noServicesMatchFilter": "ବାଛିଥିବା ବର୍ଗ ସହିତ ମେଳ ଖାଉଥିବା କୌଣସି ସେବା ନାହିଁ।"
+    "noServicesMatchFilter": "ବାଛିଥିବା ବର୍ଗ ସହିତ ମେଳ ଖାଉଥିବା କୌଣସି ସେବା ନାହିଁ।",
+    "foundCount": "{count} ମିଳିଲା"
+  },
+  "search": {
+    "placeholder": "ସ୍ଥାନ ଖୋଜନ୍ତୁ…",
+    "radius": "ପରିସର",
+    "notFound": "ସେହି ସ୍ଥାନ ମିଳିଲା ନାହିଁ।"
   },
   "category": {
     "hospital": "ଡାକ୍ତରଖାନା",
@@ -65,11 +72,21 @@
     "previous": "ପୂର୍ବବର୍ତ୍ତୀ",
     "next": "ପରବର୍ତ୍ତୀ",
     "pageOf": "ପୃଷ୍ଠା {page} / {total}",
-    "eligibilityComingSoon": "AI ଯୋଗ୍ୟତା ଯାଞ୍ଚ ଆସୁଛି"
+    "eligibilityComingSoon": "AI ଯୋଗ୍ୟତା ଯାଞ୍ଚ ଆସୁଛି",
+    "occupationLabel": "ହିତାଧିକାରୀ",
+    "allOccupations": "ସମସ୍ତ",
+    "filtersHeading": "ଫିଲ୍ଟର୍",
+    "categoriesHeading": "ବର୍ଗ",
+    "schemesFound": "ଯୋଜନା ମିଳିଲା",
+    "likelyEligible": "ଯୋଗ୍ୟ ହେବାର ସମ୍ଭାବନା",
+    "resultsCount": "{count} ଫଲାଫଳ"
   },
   "mapView": {
     "youAreHere": "ଆପଣ ଏଠାରେ ଅଛନ୍ତି",
-    "unavailable": "ମାନଚିତ୍ର ଉପଲବ୍ଧ ନାହିଁ"
+    "unavailable": "ମାନଚିତ୍ର ଉପଲବ୍ଧ ନାହିଁ",
+    "zoomIn": "ଜୁମ୍ ଇନ୍",
+    "zoomOut": "ଜୁମ୍ ଆଉଟ୍",
+    "myLocation": "ମୋ ସ୍ଥାନ"
   },
   "voice": {
     "speak": "କୁହନ୍ତୁ",
@@ -82,6 +99,55 @@
       "missing_audio": "ଶୁଣି ପାରିଲି ନାହିଁ, ଦୟାକରି ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ।",
       "recognition_failed": "ବୁଝି ପାରିଲି ନାହିଁ, ଦୟାକରି ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ।",
       "mic_denied": "ଭଏସ୍ ସର୍ଚ୍ଚ ପାଇଁ ମାଇକ୍ରୋଫୋନ୍ ଅନୁମତି ଆବଶ୍ୟକ।"
+    },
+    "bar": {
+      "title": "ଆପଣଙ୍କ ଭାଷାରେ କୁହନ୍ତୁ।",
+      "subtitle": "ଆପଣଙ୍କୁ ଯାହା ଆବଶ୍ୟକ ତାହା ପାଆନ୍ତୁ।"
+    }
+  },
+  "auth": {
+    "login": "ଲଗ୍ ଇନ୍ କରନ୍ତୁ",
+    "phoneLabel": "ମୋବାଇଲ୍ ନମ୍ବର",
+    "phonePlaceholder": "98765 43210",
+    "sendOtp": "OTP ପଠାନ୍ତୁ",
+    "enterOtp": "{phone}କୁ ପଠାଯାଇଥିବା OTP ଲେଖନ୍ତୁ",
+    "verify": "ଯାଞ୍ଚ କରନ୍ତୁ",
+    "resendOtp": "OTP ପୁନର୍ବାର ପଠାନ୍ତୁ",
+    "changeNumber": "ନମ୍ବର ବଦଳାନ୍ତୁ",
+    "emailLabel": "ଇମେଲ୍ (ଇଚ୍ଛାଧୀନ)",
+    "emailPlaceholder": "you@example.com",
+    "save": "ସେଭ୍ କରନ୍ତୁ",
+    "skip": "ଛାଡ଼ି ଦିଅନ୍ତୁ",
+    "addEmail": "ଇମେଲ୍ ଯୋଡ଼ନ୍ତୁ",
+    "logout": "ଲଗ୍ ଆଉଟ୍ କରନ୍ତୁ",
+    "errors": {
+      "invalid_phone": "ଏକ ବୈଧ 10 ଅଙ୍କର ମୋବାଇଲ୍ ନମ୍ବର ଲେଖନ୍ତୁ।",
+      "rate_limited": "ଅନେକ ପ୍ରୟାସ। ଦୟାକରି କିଛି ସମୟ ଅପେକ୍ଷା କରନ୍ତୁ।",
+      "not_requested": "ପ୍ରଥମେ ଏକ ନୂତନ OTP ମାଗନ୍ତୁ।",
+      "expired": "ଏହି OTP ସମୟ ସମାପ୍ତ ହୋଇଛି। ନୂତନ OTP ମାଗନ୍ତୁ।",
+      "too_many_attempts": "ଅନେକ ଭୁଲ ପ୍ରୟାସ। ନୂତନ OTP ମାଗନ୍ତୁ।",
+      "invalid_code": "ଭୁଲ OTP। ଦୟାକରି ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ।",
+      "invalid_email": "ଏକ ବୈଧ ଇମେଲ୍ ଠିକଣା ଲେଖନ୍ତୁ।",
+      "send_failed": "OTP ପଠାଯାଇ ପାରିଲା ନାହିଁ। ଦୟାକରି ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ।",
+      "generic": "କିଛି ଭୁଲ ହୋଇଛି। ଦୟାକରି ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ।"
+    }
+  },
+  "theme": {
+    "toggle": "ଥିମ୍ ବଦଳାନ୍ତୁ",
+    "label": "ଥିମ୍",
+    "system": "ସିସ୍ଟମ୍",
+    "light": "ଲାଇଟ୍",
+    "dark": "ଡାର୍କ୍"
+  },
+  "hero": {
+    "greeting": "ନମସ୍କାର!",
+    "question": "ଆଜି ମୁଁ ଆପଣଙ୍କୁ କିପରି ସାହାଯ୍ୟ କରିପାରିବି?",
+    "subtitle": "ନିକଟସ୍ଥ ସେବାଗୁଡ଼ିକ ଦେଖନ୍ତୁ ବା ଆମର AI ସହାୟକ ସହିତ କୁହନ୍ତୁ।",
+    "searchPlaceholder": "ନିକଟସ୍ଥ ସେବାଗୁଡ଼ିକ ଖୋଜନ୍ତୁ",
+    "features": {
+      "voiceAssistant": "AI ଭଏସ୍ ସହାୟକ",
+      "multiLanguage": "ବହୁ-ଭାଷା ସମର୍ଥନ",
+      "ruralCommunities": "ଗ୍ରାମୀଣ ସମ୍ପ୍ରଦାୟ ପାଇଁ"
     }
   }
 }

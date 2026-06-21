@@ -3,7 +3,8 @@
     "appName": "RuralLink",
     "governmentSchemes": "Government Schemes",
     "schemes": "Schemes",
-    "loadingMap": "Loading map…"
+    "loadingMap": "Loading map…",
+    "menu": "Menu"
   },
   "dashboard": {
     "nearbyServices": "Nearby services",
@@ -14,7 +15,13 @@
     "servicesLoadError": "Couldn't load nearby services. Please try again.",
     "noServicesFound": "No services found within {radius} km.",
     "retry": "Try again",
-    "noServicesMatchFilter": "No services match the selected categories."
+    "noServicesMatchFilter": "No services match the selected categories.",
+    "foundCount": "{count} found"
+  },
+  "search": {
+    "placeholder": "Search location…",
+    "radius": "Radius",
+    "notFound": "Couldn't find that place."
   },
   "category": {
     "hospital": "Hospital",
@@ -65,11 +72,21 @@
     "previous": "Previous",
     "next": "Next",
     "pageOf": "Page {page} of {total}",
-    "eligibilityComingSoon": "AI eligibility check coming soon"
+    "eligibilityComingSoon": "AI eligibility check coming soon",
+    "occupationLabel": "Beneficiary",
+    "allOccupations": "All",
+    "filtersHeading": "Filters",
+    "categoriesHeading": "Categories",
+    "schemesFound": "Schemes found",
+    "likelyEligible": "Likely eligible",
+    "resultsCount": "{count} results"
   },
   "mapView": {
     "youAreHere": "You are here",
-    "unavailable": "Map unavailable"
+    "unavailable": "Map unavailable",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "myLocation": "My location"
   },
   "voice": {
     "speak": "Speak",
@@ -82,6 +99,55 @@
       "missing_audio": "Didn't catch that, please try again.",
       "recognition_failed": "Couldn't understand that, please try again.",
       "mic_denied": "Microphone access is needed for voice search."
+    },
+    "bar": {
+      "title": "Speak in your language.",
+      "subtitle": "Get what you need."
+    }
+  },
+  "auth": {
+    "login": "Log in",
+    "phoneLabel": "Mobile number",
+    "phonePlaceholder": "98765 43210",
+    "sendOtp": "Send OTP",
+    "enterOtp": "Enter the OTP sent to {phone}",
+    "verify": "Verify",
+    "resendOtp": "Resend OTP",
+    "changeNumber": "Change number",
+    "emailLabel": "Email (optional)",
+    "emailPlaceholder": "you@example.com",
+    "save": "Save",
+    "skip": "Skip",
+    "addEmail": "Add email",
+    "logout": "Log out",
+    "errors": {
+      "invalid_phone": "Enter a valid 10-digit mobile number.",
+      "rate_limited": "Too many attempts. Please wait a moment.",
+      "not_requested": "Request a new OTP first.",
+      "expired": "This OTP expired. Request a new one.",
+      "too_many_attempts": "Too many incorrect attempts. Request a new OTP.",
+      "invalid_code": "Incorrect OTP. Please try again.",
+      "invalid_email": "Enter a valid email address.",
+      "send_failed": "Couldn't send the OTP. Please try again.",
+      "generic": "Something went wrong. Please try again."
+    }
+  },
+  "theme": {
+    "toggle": "Toggle theme",
+    "label": "Theme",
+    "system": "System",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "hero": {
+    "greeting": "Hello!",
+    "question": "How can I help you today?",
+    "subtitle": "Explore nearby services or speak with our AI assistant.",
+    "searchPlaceholder": "Find nearby services",
+    "features": {
+      "voiceAssistant": "AI Voice Assistant",
+      "multiLanguage": "Multi-Language Support",
+      "ruralCommunities": "For Rural Communities"
     }
   }
 }

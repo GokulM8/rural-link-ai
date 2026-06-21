@@ -3,11 +3,7 @@
 import { useCallback, useRef, useState } from "react";
 import { Loader2, Mic, Square } from "lucide-react";
 import { useTranslations } from "next-intl";
-import type { ServiceCategory } from "@/lib/overpass";
-
-export interface VoiceAssistantProps {
-  onIntent: (category: ServiceCategory | "unknown") => void;
-}
+import type { VoiceDomain } from "@/lib/voiceAssistant";
 
 type RecorderState = "idle" | "recording" | "processing" | "error";
 
@@ -42,7 +38,9 @@ function speak(text: string, detectedLanguage: string) {
   window.speechSynthesis.speak(utterance);
 }
 
-export default function VoiceAssistant({ onIntent }: VoiceAssistantProps) {
+/** Shared recording/upload mechanics — the only thing that differs between
+ * the circular default button and the bottom-bar variant is presentation. */
+function useVoiceRecorder(domain: VoiceDomain, onIntent: (category: string) => void) {
   const t = useTranslations("voice");
   const [state, setState] = useState<RecorderState>("idle");
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
@@ -99,7 +97,7 @@ export default function VoiceAssistant({ onIntent }: VoiceAssistantProps) {
           const response = await fetch("/api/voice", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ audio: base64, mimeType: blob.type }),
+            body: JSON.stringify({ audio: base64, mimeType: blob.type, domain }),
           });
 
           await handleResponse(response);
@@ -118,23 +116,74 @@ export default function VoiceAssistant({ onIntent }: VoiceAssistantProps) {
       setStatusMessage(t("errors.mic_denied"));
       setState("error");
     }
-  }, [handleResponse, t]);
+  }, [domain, handleResponse, t]);
 
   const stopRecording = useCallback(() => {
     mediaRecorderRef.current?.stop();
   }, []);
 
+  return { state, statusMessage, startRecording, stopRecording, t };
+}
+
+export interface VoiceAssistantProps {
+  /** Which category vocabulary the backend should classify speech against. */
+  domain?: VoiceDomain;
+  onIntent: (category: string) => void;
+  /** "bar" is the full-width floating prompt used in the mobile bottom action bar;
+   * "topbar" is the small flat square mic button used in the floating topbar. */
+  variant?: "topbar" | "bar";
+}
+
+export default function VoiceAssistant({ domain = "services", onIntent, variant = "topbar" }: VoiceAssistantProps) {
+  const { state, statusMessage, startRecording, stopRecording, t } = useVoiceRecorder(domain, onIntent);
+
+  if (variant === "bar") {
+    return (
+      <div className="flex flex-col gap-1.5">
+        <button
+          type="button"
+          onClick={state === "recording" ? stopRecording : startRecording}
+          disabled={state === "processing"}
+          aria-label={state === "recording" ? t("stop") : t("speak")}
+          className="flex w-full items-center gap-3 rounded-full bg-gradient-to-r from-[#136349] to-[#1D9E75] px-4 py-3 text-left text-white shadow-lg transition active:scale-[0.99] disabled:opacity-70"
+        >
+          <span className="flex shrink-0 items-end gap-0.5" aria-hidden="true">
+            {[6, 13, 9, 16, 7].map((height, index) => (
+              <span
+                key={index}
+                className={`w-1 rounded-full bg-white/70 ${state === "recording" ? "animate-pulse" : ""}`}
+                style={{ height }}
+              />
+            ))}
+          </span>
+          <span className="flex-1 text-sm leading-tight">
+            <span className="block font-medium">{t("bar.title")}</span>
+            <span className="block text-white/80">{t("bar.subtitle")}</span>
+          </span>
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-[#1D9E75]">
+            {state === "processing" ? (
+              <Loader2 className="h-5 w-5 animate-spin" strokeWidth={1.75} />
+            ) : state === "recording" ? (
+              <Square className="h-5 w-5" strokeWidth={1.75} />
+            ) : (
+              <Mic className="h-5 w-5" strokeWidth={1.75} />
+            )}
+          </span>
+        </button>
+        {statusMessage && <p className="px-2 text-center text-xs text-[var(--text-secondary)]">{statusMessage}</p>}
+      </div>
+    );
+  }
+
   return (
-    <div className="flex flex-col items-end gap-1">
+    <div className="relative flex items-center">
       <button
         type="button"
         onClick={state === "recording" ? stopRecording : startRecording}
         disabled={state === "processing"}
         aria-label={state === "recording" ? t("stop") : t("speak")}
-        className={`flex h-9 w-9 items-center justify-center rounded-full transition disabled:opacity-50 ${
-          state === "recording"
-            ? "animate-pulse bg-red-500 text-white"
-            : "bg-primary text-white hover:bg-primary-600"
+        className={`flex h-9 w-9 items-center justify-center rounded-[10px] text-white transition active:scale-95 disabled:pointer-events-none disabled:opacity-50 ${
+          state === "recording" ? "animate-pulse bg-red-500" : "bg-[#1D9E75] hover:bg-[#177F5E]"
         }`}
       >
         {state === "processing" ? (
@@ -145,7 +194,11 @@ export default function VoiceAssistant({ onIntent }: VoiceAssistantProps) {
           <Mic className="h-4 w-4" strokeWidth={1.75} />
         )}
       </button>
-      {statusMessage && <p className="max-w-[220px] text-right text-xs text-foreground/60">{statusMessage}</p>}
+      {statusMessage && (
+        <p className="absolute right-0 top-11 z-20 w-56 rounded-lg border border-[var(--border-subtle)] bg-[var(--surface-1)]/95 p-2 text-right text-xs text-[var(--text-3)] shadow-lg">
+          {statusMessage}
+        </p>
+      )}
     </div>
   );
 }

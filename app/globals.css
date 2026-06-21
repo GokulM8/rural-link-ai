@@ -3,8 +3,91 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  /* Slightly off-white, not pure white — the floating pill header (white,
+     shadowed) needs visible contrast against the page or it reads as flush
+     with the page instead of floating above it. */
+  --background: #f4f5f7;
   --foreground: #171717;
+
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-card: #ffffff;
+  --text-primary: #0a0a0a;
+  --text-secondary: #6b7280;
+  --accent: #1d9e75;
+  --accent-light: #e1f5ee;
+  --card-border: rgba(0, 0, 0, 0.08);
+  --ai-tip-bg: #e1f5ee;
+  --ai-tip-text: #085041;
+
+  /* Floating-panel design system (dashboard + schemes pages). The accent
+     and per-category identity colors are intentionally NOT theme-aware —
+     same brand green / category hues in both modes, only surfaces, borders,
+     and text tiers (and category tint *backgrounds*) flip. */
+  --surface-0: #f4f5f7;
+  --surface-1: #ffffff;
+  --surface-2: #ffffff;
+  --surface-3: #f0f0ee;
+  --border-subtle: #e6e6e1;
+  --border-strong: #d6d6cf;
+  /* Opacity modifiers (e.g. bg-[var(--x)]/40) don't reliably apply to
+     var()-based arbitrary colors in Tailwind, especially inside @apply —
+     baking the alpha into the variable itself sidesteps that entirely. */
+  --hover-overlay: rgba(0, 0, 0, 0.04);
+  --text-1: #171717;
+  --text-2: #404040;
+  --text-3: #6b7280;
+  --text-4: #9ca3af;
+
+  --cat-tint-red: #fef2f2;
+  --cat-tint-amber: #fffbeb;
+  --cat-tint-blue: #eff6ff;
+  --cat-tint-indigo: #eef2ff;
+  --cat-tint-purple: #faf5ff;
+  --cat-tint-green: #ecfdf5;
+  --cat-tint-slate: #f1f5f9;
+  --cat-tint-teal: #f0fdfa;
+}
+
+.dark {
+  /* Kept in sync with --bg-primary/--text-primary below so the rest of the
+     app (anything still using the original background/foreground tokens,
+     e.g. text-foreground) goes dark too, not just the components migrated
+     to the newer bg/text variable set. */
+  --background: #0c0c0c;
+  --foreground: #f0f0f0;
+
+  --bg-primary: #0c0c0c;
+  --bg-secondary: #161616;
+  --bg-card: #161616;
+  --text-primary: #f0f0f0;
+  --text-secondary: #9ca3af;
+  --accent: #1d9e75;
+  --accent-light: #0d2b22;
+  --card-border: rgba(255, 255, 255, 0.07);
+  --ai-tip-bg: #0d2b22;
+  --ai-tip-text: #5dcaa5;
+
+  --surface-0: #0a0a0a;
+  --surface-1: #0a0a0a;
+  --surface-2: #111111;
+  --surface-3: #161616;
+  --border-subtle: #1e1e1e;
+  --border-strong: #333333;
+  --hover-overlay: rgba(255, 255, 255, 0.05);
+  --text-1: #e5e5e5;
+  --text-2: #cccccc;
+  --text-3: #999999;
+  --text-4: #666666;
+
+  --cat-tint-red: #1a0f0f;
+  --cat-tint-amber: #1e1608;
+  --cat-tint-blue: #0d1525;
+  --cat-tint-indigo: #150f25;
+  --cat-tint-purple: #180f25;
+  --cat-tint-green: #0d1f18;
+  --cat-tint-slate: #15191c;
+  --cat-tint-teal: #0d1f1f;
 }
 
 body {
@@ -16,5 +99,47 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@keyframes theme-icon-in {
+  from {
+    opacity: 0;
+    transform: scale(0.5) rotate(-90deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.theme-icon-enter {
+  animation: theme-icon-in 200ms ease-out;
+}
+
+@layer components {
+  /* Shared interactive treatment for the floating-panel UI — consistent
+     across every button, link-styled-as-button, input, and chip so they
+     read as one cohesive system. Driven by the surface/text/border tokens
+     above (not the brand accent, which is intentionally constant) so they
+     follow the light/dark/system toggle. */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg bg-[#1D9E75] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#177F5E] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1D9E75]/50 disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-lg border border-[var(--border-subtle)] bg-[var(--surface-3)] px-3 py-1.5 text-sm font-medium text-[var(--text-3)] transition hover:bg-[var(--hover-overlay)] hover:text-[var(--text-2)] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1D9E75]/50 disabled:pointer-events-none disabled:opacity-40;
+  }
+
+  .input-field {
+    @apply rounded-lg border border-[var(--border-subtle)] bg-[var(--surface-2)] px-3 py-2 text-sm text-[var(--text-1)] transition focus:border-[#1D9E75]/50 focus:outline-none focus:ring-2 focus:ring-[#1D9E75]/20;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1 whitespace-nowrap rounded-full border px-2.5 py-1 text-xs font-medium transition active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1D9E75]/50;
+  }
+
+  .link-action {
+    @apply inline-flex items-center gap-1.5 whitespace-nowrap rounded-md px-1.5 py-1 -mx-1.5 -my-1 transition hover:bg-[var(--hover-overlay)] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1D9E75]/50;
   }
 }

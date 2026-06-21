@@ -3,7 +3,8 @@
     "appName": "RuralLink",
     "governmentSchemes": "ప్రభుత్వ పథకాలు",
     "schemes": "పథకాలు",
-    "loadingMap": "మ్యాప్ లోడ్ అవుతోంది…"
+    "loadingMap": "మ్యాప్ లోడ్ అవుతోంది…",
+    "menu": "మెనూ"
   },
   "dashboard": {
     "nearbyServices": "సమీప సేవలు",
@@ -14,7 +15,13 @@
     "servicesLoadError": "సమీప సేవలను లోడ్ చేయలేకపోయాం. దయచేసి మళ్లీ ప్రయత్నించండి.",
     "noServicesFound": "{radius} కి.మీ పరిధిలో సేవలు కనుగొనబడలేదు.",
     "retry": "మళ్లీ ప్రయత్నించండి",
-    "noServicesMatchFilter": "ఎంచుకున్న వర్గాలకు సరిపోలే సేవలు లేవు."
+    "noServicesMatchFilter": "ఎంచుకున్న వర్గాలకు సరిపోలే సేవలు లేవు.",
+    "foundCount": "{count} కనుగొనబడ్డాయి"
+  },
+  "search": {
+    "placeholder": "స్థానం వెతకండి…",
+    "radius": "పరిధి",
+    "notFound": "ఆ స్థలం కనుగొనబడలేదు."
   },
   "category": {
     "hospital": "ఆసుపత్రి",
@@ -65,11 +72,21 @@
     "previous": "మునుపటి",
     "next": "తదుపరి",
     "pageOf": "పేజీ {page} / {total}",
-    "eligibilityComingSoon": "AI అర్హత తనిఖీ త్వరలో వస్తుంది"
+    "eligibilityComingSoon": "AI అర్హత తనిఖీ త్వరలో వస్తుంది",
+    "occupationLabel": "లబ్ధిదారు",
+    "allOccupations": "అన్నీ",
+    "filtersHeading": "ఫిల్టర్‌లు",
+    "categoriesHeading": "వర్గాలు",
+    "schemesFound": "పథకాలు కనుగొనబడ్డాయి",
+    "likelyEligible": "యోగ్యత ఉండే అవకాశం",
+    "resultsCount": "{count} ఫలితాలు"
   },
   "mapView": {
     "youAreHere": "మీరు ఇక్కడ ఉన్నారు",
-    "unavailable": "మ్యాప్ అందుబాటులో లేదు"
+    "unavailable": "మ్యాప్ అందుబాటులో లేదు",
+    "zoomIn": "జూమ్ ఇన్",
+    "zoomOut": "జూమ్ అవుట్",
+    "myLocation": "నా లొకేషన్"
   },
   "voice": {
     "speak": "మాట్లాడండి",
@@ -82,6 +99,55 @@
       "missing_audio": "వినలేకపోయాను, దయచేసి మళ్లీ ప్రయత్నించండి.",
       "recognition_failed": "అర్థం కాలేదు, దయచేసి మళ్లీ ప్రయత్నించండి.",
       "mic_denied": "వాయిస్ సెర్చ్ కోసం మైక్రోఫోన్ అనుమతి అవసరం."
+    },
+    "bar": {
+      "title": "మీ భాషలో మాట్లాడండి.",
+      "subtitle": "మీకు కావాల్సింది పొందండి."
+    }
+  },
+  "auth": {
+    "login": "లాగిన్ చేయండి",
+    "phoneLabel": "మొబైల్ నంబర్",
+    "phonePlaceholder": "98765 43210",
+    "sendOtp": "OTP పంపండి",
+    "enterOtp": "{phone}కి పంపిన OTP నమోదు చేయండి",
+    "verify": "నిర్ధారించండి",
+    "resendOtp": "OTP మళ్లీ పంపండి",
+    "changeNumber": "నంబర్ మార్చండి",
+    "emailLabel": "ఈమెయిల్ (ఐచ్ఛికం)",
+    "emailPlaceholder": "you@example.com",
+    "save": "సేవ్ చేయండి",
+    "skip": "స్కిప్ చేయండి",
+    "addEmail": "ఈమెయిల్ జోడించండి",
+    "logout": "లాగౌట్ చేయండి",
+    "errors": {
+      "invalid_phone": "సరైన 10 అంకెల మొబైల్ నంబర్ నమోదు చేయండి.",
+      "rate_limited": "చాలా ప్రయత్నాలు. దయచేసి కొంత సమయం తర్వాత ప్రయత్నించండి.",
+      "not_requested": "ముందు కొత్త OTP కోరండి.",
+      "expired": "ఈ OTP గడువు ముగిసింది. కొత్త OTP కోరండి.",
+      "too_many_attempts": "చాలా తప్పు ప్రయత్నాలు. కొత్త OTP కోరండి.",
+      "invalid_code": "తప్పు OTP. దయచేసి మళ్లీ ప్రయత్నించండి.",
+      "invalid_email": "సరైన ఈమెయిల్ చిరునామా నమోదు చేయండి.",
+      "send_failed": "OTP పంపడం సాధ్యపడలేదు. దయచేసి మళ్లీ ప్రయత్నించండి.",
+      "generic": "ఏదో తప్పు జరిగింది. దయచేసి మళ్లీ ప్రయత్నించండి."
+    }
+  },
+  "theme": {
+    "toggle": "థీమ్ మార్చండి",
+    "label": "థీమ్",
+    "system": "సిస్టమ్",
+    "light": "లైట్",
+    "dark": "డార్క్"
+  },
+  "hero": {
+    "greeting": "నమస్కారం!",
+    "question": "ఈరోజు నేను మీకు ఎలా సహాయం చేయగలను?",
+    "subtitle": "సమీప సేవలను చూడండి లేదా మా AI సహాయకుడితో మాట్లాడండి.",
+    "searchPlaceholder": "సమీప సేవలను కనుగొనండి",
+    "features": {
+      "voiceAssistant": "AI వాయిస్ అసిస్టెంట్",
+      "multiLanguage": "బహు-భాషా మద్దతు",
+      "ruralCommunities": "గ్రామీణ సమాజాల కోసం"
     }
   }
 }

@@ -3,7 +3,8 @@
     "appName": "RuralLink",
     "governmentSchemes": "ಸರ್ಕಾರಿ ಯೋಜನೆಗಳು",
     "schemes": "ಯೋಜನೆಗಳು",
-    "loadingMap": "ನಕ್ಷೆ ಲೋಡ್ ಆಗುತ್ತಿದೆ…"
+    "loadingMap": "ನಕ್ಷೆ ಲೋಡ್ ಆಗುತ್ತಿದೆ…",
+    "menu": "ಮೆನು"
   },
   "dashboard": {
     "nearbyServices": "ಹತ್ತಿರದ ಸೇವೆಗಳು",
@@ -14,7 +15,13 @@
     "servicesLoadError": "ಸೇವೆಗಳನ್ನು ಲೋಡ್ ಮಾಡಲಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
     "noServicesFound": "{radius} ಕಿ.ಮೀ ವ್ಯಾಪ್ತಿಯಲ್ಲಿ ಸೇವೆಗಳು ಕಂಡುಬಂದಿಲ್ಲ.",
     "retry": "ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ",
-    "noServicesMatchFilter": "ಆಯ್ಕೆಮಾಡಿದ ವರ್ಗಗಳಿಗೆ ಹೊಂದುವ ಸೇವೆಗಳಿಲ್ಲ."
+    "noServicesMatchFilter": "ಆಯ್ಕೆಮಾಡಿದ ವರ್ಗಗಳಿಗೆ ಹೊಂದುವ ಸೇವೆಗಳಿಲ್ಲ.",
+    "foundCount": "{count} ಕಂಡುಬಂದಿದೆ"
+  },
+  "search": {
+    "placeholder": "ಸ್ಥಳವನ್ನು ಹುಡುಕಿ…",
+    "radius": "ವ್ಯಾಪ್ತಿ",
+    "notFound": "ಆ ಸ್ಥಳ ಕಂಡುಬಂದಿಲ್ಲ."
   },
   "category": {
     "hospital": "ಆಸ್ಪತ್ರೆ",
@@ -65,11 +72,21 @@
     "previous": "ಹಿಂದಿನ",
     "next": "ಮುಂದಿನ",
     "pageOf": "ಪುಟ {page} / {total}",
-    "eligibilityComingSoon": "AI ಅರ್ಹತೆ ಪರಿಶೀಲನೆ ಶೀಘ್ರದಲ್ಲಿ"
+    "eligibilityComingSoon": "AI ಅರ್ಹತೆ ಪರಿಶೀಲನೆ ಶೀಘ್ರದಲ್ಲಿ",
+    "occupationLabel": "ಫಲಾನುಭವಿ",
+    "allOccupations": "ಎಲ್ಲಾ",
+    "filtersHeading": "ಫಿಲ್ಟರ್‌ಗಳು",
+    "categoriesHeading": "ವರ್ಗಗಳು",
+    "schemesFound": "ಯೋಜನೆಗಳು ಕಂಡುಬಂದಿವೆ",
+    "likelyEligible": "ಅರ್ಹತೆ ಇರುವ ಸಾಧ್ಯತೆ",
+    "resultsCount": "{count} ಫಲಿತಾಂಶಗಳು"
   },
   "mapView": {
     "youAreHere": "ನೀವು ಇಲ್ಲಿ ಇದ್ದೀರಿ",
-    "unavailable": "ನಕ್ಷೆ ಲಭ್ಯವಿಲ್ಲ"
+    "unavailable": "ನಕ್ಷೆ ಲಭ್ಯವಿಲ್ಲ",
+    "zoomIn": "ಝೂಮ್ ಇನ್",
+    "zoomOut": "ಝೂಮ್ ಔಟ್",
+    "myLocation": "ನನ್ನ ಸ್ಥಳ"
   },
   "voice": {
     "speak": "ಮಾತನಾಡಿ",
@@ -82,6 +99,55 @@
       "missing_audio": "ಕೇಳಲು ಆಗಲಿಲ್ಲ, ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
       "recognition_failed": "ಅರ್ಥವಾಗಲಿಲ್ಲ, ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
       "mic_denied": "ವಾಯ್ಸ್ ಸರ್ಚ್‌ಗಾಗಿ ಮೈಕ್ರೋಫೋನ್ ಅನುಮತಿ ಬೇಕು."
+    },
+    "bar": {
+      "title": "ನಿಮ್ಮ ಭಾಷೆಯಲ್ಲಿ ಮಾತನಾಡಿ.",
+      "subtitle": "ನಿಮಗೆ ಬೇಕಾದುದನ್ನು ಪಡೆಯಿರಿ."
+    }
+  },
+  "auth": {
+    "login": "ಲಾಗಿನ್ ಮಾಡಿ",
+    "phoneLabel": "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",
+    "phonePlaceholder": "98765 43210",
+    "sendOtp": "OTP ಕಳುಹಿಸಿ",
+    "enterOtp": "{phone}ಗೆ ಕಳುಹಿಸಿದ OTP ನಮೂದಿಸಿ",
+    "verify": "ಪರಿಶೀಲಿಸಿ",
+    "resendOtp": "OTP ಮತ್ತೆ ಕಳುಹಿಸಿ",
+    "changeNumber": "ಸಂಖ್ಯೆ ಬದಲಾಯಿಸಿ",
+    "emailLabel": "ಇಮೇಲ್ (ಐಚ್ಛಿಕ)",
+    "emailPlaceholder": "you@example.com",
+    "save": "ಉಳಿಸಿ",
+    "skip": "ಸ್ಕಿಪ್ ಮಾಡಿ",
+    "addEmail": "ಇಮೇಲ್ ಸೇರಿಸಿ",
+    "logout": "ಲಾಗ್ ಔಟ್ ಮಾಡಿ",
+    "errors": {
+      "invalid_phone": "ಸರಿಯಾದ 10 ಅಂಕೆಗಳ ಮೊಬೈಲ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ.",
+      "rate_limited": "ಹೆಚ್ಚು ಪ್ರಯತ್ನಗಳು. ದಯವಿಟ್ಟು ಸ್ವಲ್ಪ ಸಮಯ ಕಾಯಿರಿ.",
+      "not_requested": "ಮೊದಲು ಹೊಸ OTP ಕೋರಿ.",
+      "expired": "ಈ OTP ಅವಧಿ ಮುಗಿದಿದೆ. ಹೊಸ OTP ಕೋರಿ.",
+      "too_many_attempts": "ಹೆಚ್ಚು ತಪ್ಪು ಪ್ರಯತ್ನಗಳು. ಹೊಸ OTP ಕೋರಿ.",
+      "invalid_code": "ತಪ್ಪು OTP. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+      "invalid_email": "ಸರಿಯಾದ ಇಮೇಲ್ ವಿಳಾಸವನ್ನು ನಮೂದಿಸಿ.",
+      "send_failed": "OTP ಕಳುಹಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+      "generic": "ಏನೋ ತಪ್ಪಾಗಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."
+    }
+  },
+  "theme": {
+    "toggle": "ಥೀಮ್ ಬದಲಾಯಿಸಿ",
+    "label": "ಥೀಮ್",
+    "system": "ಸಿಸ್ಟಂ",
+    "light": "ಲೈಟ್",
+    "dark": "ಡಾರ್ಕ್"
+  },
+  "hero": {
+    "greeting": "ನಮಸ್ಕಾರ!",
+    "question": "ಇಂದು ನಾನು ನಿಮಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಲ್ಲೆ?",
+    "subtitle": "ಹತ್ತಿರದ ಸೇವೆಗಳನ್ನು ನೋಡಿ ಅಥವಾ ನಮ್ಮ AI ಸಹಾಯಕರೊಂದಿಗೆ ಮಾತನಾಡಿ.",
+    "searchPlaceholder": "ಹತ್ತಿರದ ಸೇವೆಗಳನ್ನು ಹುಡುಕಿ",
+    "features": {
+      "voiceAssistant": "AI ವಾಯ್ಸ್ ಅಸಿಸ್ಟೆಂಟ್",
+      "multiLanguage": "ಬಹು-ಭಾಷಾ ಬೆಂಬಲ",
+      "ruralCommunities": "ಗ್ರಾಮೀಣ ಸಮುದಾಯಗಳಿಗಾಗಿ"
     }
   }
 }

@@ -3,7 +3,8 @@
     "appName": "RuralLink",
     "governmentSchemes": "सरकारी योजनाएं",
     "schemes": "योजनाएं",
-    "loadingMap": "मैप लोड हो रहा है…"
+    "loadingMap": "मैप लोड हो रहा है…",
+    "menu": "मेनू"
   },
   "dashboard": {
     "nearbyServices": "आस-पास की सेवाएं",
@@ -14,7 +15,13 @@
     "servicesLoadError": "सेवाएं लोड नहीं हो सकीं। कृपया फिर से प्रयास करें।",
     "noServicesFound": "{radius} किमी के दायरे में कोई सेवा नहीं मिली।",
     "retry": "फिर कोशिश करें",
-    "noServicesMatchFilter": "चयनित श्रेणियों से मेल खाने वाली कोई सेवा नहीं है।"
+    "noServicesMatchFilter": "चयनित श्रेणियों से मेल खाने वाली कोई सेवा नहीं है।",
+    "foundCount": "{count} मिले"
+  },
+  "search": {
+    "placeholder": "स्थान खोजें…",
+    "radius": "दायरा",
+    "notFound": "वह स्थान नहीं मिला।"
   },
   "category": {
     "hospital": "अस्पताल",
@@ -65,11 +72,21 @@
     "previous": "पिछला",
     "next": "आगे",
     "pageOf": "पृष्ठ {page} का {total}",
-    "eligibilityComingSoon": "AI पात्रता जांच जल्द आ रही है"
+    "eligibilityComingSoon": "AI पात्रता जांच जल्द आ रही है",
+    "occupationLabel": "लाभार्थी",
+    "allOccupations": "सभी",
+    "filtersHeading": "फ़िल्टर",
+    "categoriesHeading": "श्रेणियाँ",
+    "schemesFound": "योजनाएं मिलीं",
+    "likelyEligible": "योग्य होने की संभावना",
+    "resultsCount": "{count} परिणाम"
   },
   "mapView": {
     "youAreHere": "आप यहाँ हैं",
-    "unavailable": "मैप उपलब्ध नहीं है"
+    "unavailable": "मैप उपलब्ध नहीं है",
+    "zoomIn": "ज़ूम इन",
+    "zoomOut": "ज़ूम आउट",
+    "myLocation": "मेरी लोकेशन"
   },
   "voice": {
     "speak": "बोलें",
@@ -82,6 +99,55 @@
       "missing_audio": "सुन नहीं पाया, कृपया फिर से कोशिश करें।",
       "recognition_failed": "समझ नहीं पाया, कृपया फिर से कोशिश करें।",
       "mic_denied": "वॉइस सर्च के लिए माइक्रोफ़ोन की अनुमति चाहिए।"
+    },
+    "bar": {
+      "title": "अपनी भाषा में बोलें।",
+      "subtitle": "जो चाहिए वो पाएं।"
+    }
+  },
+  "auth": {
+    "login": "लॉग इन करें",
+    "phoneLabel": "मोबाइल नंबर",
+    "phonePlaceholder": "98765 43210",
+    "sendOtp": "OTP भेजें",
+    "enterOtp": "{phone} पर भेजा गया OTP दर्ज करें",
+    "verify": "सत्यापित करें",
+    "resendOtp": "OTP फिर से भेजें",
+    "changeNumber": "नंबर बदलें",
+    "emailLabel": "ईमेल (वैकल्पिक)",
+    "emailPlaceholder": "you@example.com",
+    "save": "सहेजें",
+    "skip": "छोड़ें",
+    "addEmail": "ईमेल जोड़ें",
+    "logout": "लॉग आउट करें",
+    "errors": {
+      "invalid_phone": "एक वैध 10 अंकों का मोबाइल नंबर दर्ज करें।",
+      "rate_limited": "बहुत अधिक प्रयास। कृपया कुछ समय बाद कोशिश करें।",
+      "not_requested": "पहले एक नया OTP मांगें।",
+      "expired": "यह OTP समाप्त हो गया है। नया OTP मांगें।",
+      "too_many_attempts": "बहुत बार गलत प्रयास। नया OTP मांगें।",
+      "invalid_code": "गलत OTP। कृपया फिर से कोशिश करें।",
+      "invalid_email": "एक वैध ईमेल पता दर्ज करें।",
+      "send_failed": "OTP नहीं भेजा जा सका। कृपया फिर से कोशिश करें।",
+      "generic": "कुछ गड़बड़ हो गई। कृपया फिर से कोशिश करें।"
+    }
+  },
+  "theme": {
+    "toggle": "थीम बदलें",
+    "label": "थीम",
+    "system": "सिस्टम",
+    "light": "लाइट",
+    "dark": "डार्क"
+  },
+  "hero": {
+    "greeting": "नमस्ते!",
+    "question": "आज मैं आपकी कैसे मदद करूं?",
+    "subtitle": "नज़दीकी सेवाएं देखें या हमारे AI सहायक से बात करें।",
+    "searchPlaceholder": "नज़दीकी सेवाएं खोजें",
+    "features": {
+      "voiceAssistant": "AI वॉइस असिस्टेंट",
+      "multiLanguage": "बहु-भाषा समर्थन",
+      "ruralCommunities": "ग्रामीण समुदायों के लिए"
     }
   }
 }

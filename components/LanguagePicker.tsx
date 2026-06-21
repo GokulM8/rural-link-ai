@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { useLocale, useTranslations } from "next-intl";
 import { Globe, X } from "lucide-react";
 import { useLocaleSwitcher, LOCALE_STORAGE_KEY } from "@/components/IntlProvider";
@@ -60,58 +61,60 @@ export default function LanguagePicker({ coords }: LanguagePickerProps) {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="flex items-center gap-1.5 rounded-md border border-primary-100 bg-white px-3 py-1.5 text-sm text-foreground hover:bg-primary-50"
+        className="flex items-center gap-[5px] rounded-lg px-2.5 py-1 text-xs text-[var(--text-3)] transition hover:bg-[var(--surface-3)] hover:text-[var(--text-2)]"
       >
-        <Globe className="h-4 w-4 text-primary-600" strokeWidth={1.75} />
-        {currentLabel}
+        <Globe className="h-3.5 w-3.5" strokeWidth={1.75} />
+        <span className="hidden text-[var(--text-2)] sm:inline">{currentLabel}</span>
       </button>
 
-      {isOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 px-4"
-          onClick={() => setIsOpen(false)}
-        >
+      {isOpen &&
+        createPortal(
           <div
-            className="w-full max-w-sm rounded-xl bg-white p-5 shadow-lg"
-            onClick={(event) => event.stopPropagation()}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4"
+            onClick={() => setIsOpen(false)}
           >
-            <div className="flex items-center justify-between">
-              <h2 className="text-lg font-semibold text-foreground">{t("title")}</h2>
-              <button
-                type="button"
-                onClick={() => setIsOpen(false)}
-                aria-label={t("close")}
-                className="text-foreground/50 hover:text-foreground"
-              >
-                <X className="h-5 w-5" strokeWidth={1.75} />
-              </button>
-            </div>
-
-            <div className="mt-4 grid grid-cols-2 gap-2">
-              {LOCALES.map((option) => (
+            <div
+              className="w-full max-w-sm rounded-2xl border border-[var(--border-subtle)] bg-[var(--surface-2)] p-5 shadow-2xl"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <div className="flex items-center justify-between">
+                <h2 className="text-base font-medium text-[var(--text-1)]">{t("title")}</h2>
                 <button
-                  key={option.code}
                   type="button"
-                  onClick={() => {
-                    setLocale(option.code);
-                    setIsOpen(false);
-                  }}
-                  className={`rounded-md border px-3 py-2 text-left text-sm transition ${
-                    option.code === locale
-                      ? "border-primary bg-primary-50 text-primary-700"
-                      : "border-primary-100 text-foreground hover:bg-primary-50"
-                  }`}
+                  onClick={() => setIsOpen(false)}
+                  aria-label={t("close")}
+                  className="rounded-md p-1 text-[var(--text-4)] transition hover:bg-[var(--hover-overlay)] hover:text-[var(--text-3)] active:scale-95"
                 >
-                  <div>{option.label}</div>
-                  {option.code === suggested && (
-                    <div className="text-xs text-primary-600">{t("suggested")}</div>
-                  )}
+                  <X className="h-5 w-5" strokeWidth={1.75} />
                 </button>
-              ))}
+              </div>
+
+              <div className="mt-4 grid grid-cols-2 gap-2">
+                {LOCALES.map((option) => (
+                  <button
+                    key={option.code}
+                    type="button"
+                    onClick={() => {
+                      setLocale(option.code);
+                      setIsOpen(false);
+                    }}
+                    className={`rounded-lg border px-3 py-2 text-left text-sm transition active:scale-[0.98] ${
+                      option.code === locale
+                        ? "border-[#1D9E75]/40 bg-[#1D9E75]/10 text-[#1D9E75]"
+                        : "border-[var(--border-subtle)] text-[var(--text-3)] hover:bg-[var(--hover-overlay)]"
+                    }`}
+                  >
+                    <div>{option.label}</div>
+                    {option.code === suggested && (
+                      <div className="text-xs text-[#1D9E75]/70">{t("suggested")}</div>
+                    )}
+                  </button>
+                ))}
+              </div>
             </div>
-          </div>
-        </div>
-      )}
+          </div>,
+          document.body
+        )}
     </>
   );
 }

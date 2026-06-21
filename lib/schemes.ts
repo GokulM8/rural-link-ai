@@ -1,11 +1,19 @@
-const SEARCH_ENDPOINT = "https://api.myscheme.gov.in/search/v6/schemes";
+// Deliberately no import of lib/supabase.ts (or anything that imports it) in
+// this file — it's imported by the Client Component SchemesPageView for
+// plain constants/types, and supabaseAdmin's service-role client is
+// constructed at module load time, so pulling it in here would ship that
+// construction code (and a "supabaseKey is required" crash) to the browser.
+// The Supabase-backed facets cache lives in lib/schemeFacetsCache.ts instead,
+// imported only from the Server Component app/schemes/page.tsx.
+
+export const SEARCH_ENDPOINT = "https://api.myscheme.gov.in/search/v6/schemes";
 const DETAIL_ENDPOINT = "https://api.myscheme.gov.in/schemes/v6/public/schemes";
 
 // Public key embedded in MyScheme's own frontend bundle (not a secret credential) —
 // the API gates on Origin/Referer presence rather than this key's secrecy.
 const PUBLIC_API_KEY = "tYTy5eEhlu9rFjyxuCr7ra7ACp4dv1RH8gWuHTDc";
 
-const REQUEST_HEADERS = {
+export const REQUEST_HEADERS = {
   "x-api-key": PUBLIC_API_KEY,
   Origin: "https://www.myscheme.gov.in",
   Referer: "https://www.myscheme.gov.in/search",
@@ -62,6 +70,8 @@ export const SCHEME_CATEGORIES = [
   "Women and Child",
 ];
 
+export type SchemeCategory = (typeof SCHEME_CATEGORIES)[number];
+
 export interface Scheme {
   slug: string;
   name: string;
@@ -78,6 +88,7 @@ export interface Scheme {
 export interface FetchSchemesParams {
   state?: string;
   category?: string;
+  occupation?: string;
   keyword?: string;
   from?: number;
   size?: number;
@@ -85,6 +96,14 @@ export interface FetchSchemesParams {
 
 export interface FetchSchemesResult {
   schemes: Scheme[];
+  total: number;
+}
+
+export interface SchemeFacets {
+  /** Every category in SCHEME_CATEGORIES, defaulting to 0 if MyScheme has none for this state. */
+  categoryCounts: Record<string, number>;
+  /** Real occupation/beneficiary values from MyScheme's own "occupation" facet, e.g. "Farmer". */
+  occupations: string[];
   total: number;
 }
 
@@ -97,10 +116,21 @@ interface SearchHitFields {
   schemeCloseDate?: string | null;
 }
 
-interface SearchResponse {
+export interface SearchFacetEntry {
+  label: string;
+  count: number;
+}
+
+export interface SearchFacet {
+  identifier: string;
+  entries?: SearchFacetEntry[];
+}
+
+export interface SearchResponse {
   data: {
     summary: { total: number };
     hits: { items: { fields: SearchHitFields }[] };
+    facets?: SearchFacet[];
   };
 }
 
@@ -112,10 +142,11 @@ interface DetailResponse {
   };
 }
 
-function buildFilterQuery(state?: string, category?: string): string {
+export function buildFilterQuery(state?: string, category?: string, occupation?: string): string {
   const filters: { identifier: string; value: string }[] = [];
   if (state) filters.push({ identifier: "beneficiaryState", value: state });
   if (category) filters.push({ identifier: "schemeCategory", value: category });
+  if (occupation) filters.push({ identifier: "occupation", value: occupation });
   return JSON.stringify(filters);
 }
 
@@ -150,13 +181,14 @@ async function fetchEligibilitySummary(slug: string): Promise<string> {
 export async function fetchSchemes({
   state,
   category,
+  occupation,
   keyword = "",
   from = 0,
   size = 10,
 }: FetchSchemesParams): Promise<FetchSchemesResult> {
   const params = new URLSearchParams({
     lang: "en",
-    q: buildFilterQuery(state, category),
+    q: buildFilterQuery(state, category, occupation),
     keyword,
     sort: "",
     from: String(from),

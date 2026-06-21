@@ -3,7 +3,8 @@
     "appName": "RuralLink",
     "governmentSchemes": "அரசு திட்டங்கள்",
     "schemes": "திட்டங்கள்",
-    "loadingMap": "வரைபடம் ஏற்றப்படுகிறது…"
+    "loadingMap": "வரைபடம் ஏற்றப்படுகிறது…",
+    "menu": "மெனு"
   },
   "dashboard": {
     "nearbyServices": "அருகிலுள்ள சேவைகள்",
@@ -14,7 +15,13 @@
     "servicesLoadError": "சேவைகளை ஏற்ற முடியவில்லை. மீண்டும் முயற்சிக்கவும்.",
     "noServicesFound": "{radius} கி.மீ. சுற்றளவில் சேவைகள் இல்லை.",
     "retry": "மீண்டும் முயற்சிக்கவும்",
-    "noServicesMatchFilter": "தேர்ந்தெடுக்கப்பட்ட வகைகளுக்கு பொருந்தும் சேவைகள் இல்லை."
+    "noServicesMatchFilter": "தேர்ந்தெடுக்கப்பட்ட வகைகளுக்கு பொருந்தும் சேவைகள் இல்லை.",
+    "foundCount": "{count} கிடைத்தன"
+  },
+  "search": {
+    "placeholder": "இடத்தைத் தேடுங்கள்…",
+    "radius": "சுற்றளவு",
+    "notFound": "அந்த இடம் கிடைக்கவில்லை."
   },
   "category": {
     "hospital": "மருத்துவமனை",
@@ -65,11 +72,21 @@
     "previous": "முந்தைய",
     "next": "அடுத்து",
     "pageOf": "பக்கம் {page} / {total}",
-    "eligibilityComingSoon": "AI தகுதி சரிபார்ப்பு விரைவில்"
+    "eligibilityComingSoon": "AI தகுதி சரிபார்ப்பு விரைவில்",
+    "occupationLabel": "பயனாளர்",
+    "allOccupations": "அனைத்தும்",
+    "filtersHeading": "வடிப்பான்கள்",
+    "categoriesHeading": "வகைகள்",
+    "schemesFound": "திட்டங்கள் கிடைத்தன",
+    "likelyEligible": "தகுதி பெறக்கூடியவை",
+    "resultsCount": "{count} முடிவுகள்"
   },
   "mapView": {
     "youAreHere": "நீங்கள் இங்கே இருக்கிறீர்கள்",
-    "unavailable": "வரைபடம் கிடைக்கவில்லை"
+    "unavailable": "வரைபடம் கிடைக்கவில்லை",
+    "zoomIn": "பெரிதாக்கு",
+    "zoomOut": "சிறிதாக்கு",
+    "myLocation": "எனது இடம்"
   },
   "voice": {
     "speak": "பேசுங்கள்",
@@ -82,6 +99,55 @@
       "missing_audio": "கேட்க முடியவில்லை, மீண்டும் முயற்சிக்கவும்.",
       "recognition_failed": "புரியவில்லை, மீண்டும் முயற்சிக்கவும்.",
       "mic_denied": "குரல் தேடலுக்கு மைக்ரோஃபோன் அனுமதி தேவை."
+    },
+    "bar": {
+      "title": "உங்கள் மொழியில் பேசுங்கள்.",
+      "subtitle": "உங்களுக்கு தேவையானதைப் பெறுங்கள்."
+    }
+  },
+  "auth": {
+    "login": "உள்நுழைக",
+    "phoneLabel": "மொபைல் எண்",
+    "phonePlaceholder": "98765 43210",
+    "sendOtp": "OTP அனுப்பவும்",
+    "enterOtp": "{phone}க்கு அனுப்பப்பட்ட OTP-ஐ உள்ளிடவும்",
+    "verify": "சரிபார்க்கவும்",
+    "resendOtp": "OTP-ஐ மீண்டும் அனுப்பவும்",
+    "changeNumber": "எண்ணை மாற்றவும்",
+    "emailLabel": "மின்னஞ்சல் (விருப்பத்திற்கு)",
+    "emailPlaceholder": "you@example.com",
+    "save": "சேமிக்கவும்",
+    "skip": "தவிர்க்கவும்",
+    "addEmail": "மின்னஞ்சல் சேர்க்கவும்",
+    "logout": "வெளியேறவும்",
+    "errors": {
+      "invalid_phone": "சரியான 10 இலக்க மொபைல் எண்ணை உள்ளிடவும்.",
+      "rate_limited": "அதிக முயற்சிகள். சிறிது நேரம் கழித்து முயற்சிக்கவும்.",
+      "not_requested": "முதலில் புதிய OTP-ஐ கோரவும்.",
+      "expired": "இந்த OTP காலாவதியானது. புதிய OTP-ஐ கோரவும்.",
+      "too_many_attempts": "அதிக தவறான முயற்சிகள். புதிய OTP-ஐ கோரவும்.",
+      "invalid_code": "தவறான OTP. மீண்டும் முயற்சிக்கவும்.",
+      "invalid_email": "சரியான மின்னஞ்சல் முகவரியை உள்ளிடவும்.",
+      "send_failed": "OTP-ஐ அனுப்ப முடியவில்லை. மீண்டும் முயற்சிக்கவும்.",
+      "generic": "ஏதோ தவறு நடந்தது. மீண்டும் முயற்சிக்கவும்."
+    }
+  },
+  "theme": {
+    "toggle": "தீம் மாற்றவும்",
+    "label": "தீம்",
+    "system": "சிஸ்டம்",
+    "light": "லைட்",
+    "dark": "டார்க்"
+  },
+  "hero": {
+    "greeting": "வணக்கம்!",
+    "question": "இன்று நான் உங்களுக்கு எப்படி உதவலாம்?",
+    "subtitle": "அருகிலுள்ள சேவைகளைப் பார்க்கவும் அல்லது எங்கள் AI உதவியாளருடன் பேசவும்.",
+    "searchPlaceholder": "அருகிலுள்ள சேவைகளைத் தேடுங்கள்",
+    "features": {
+      "voiceAssistant": "AI குரல் உதவியாளர்",
+      "multiLanguage": "பல மொழி ஆதரவு",
+      "ruralCommunities": "கிராமப்புற சமூகங்களுக்கு"
     }
   }
 }

@@ -63,9 +63,22 @@ export const CATEGORY_COLOR: Record<ServiceCategory, string> = {
   hospital: "#EF4444",
   clinic: "#F59E0B",
   bank: "#3B82F6",
-  atm: "#6366F1",
+  atm: "#818CF8",
   school: "#A855F7",
-  government: "#6B7280",
+  government: "#10B981",
+};
+
+// Icon-badge tint per category — a pastel wash of the same hue as
+// CATEGORY_COLOR, via theme-aware CSS vars (dark: near-black wash, light:
+// pale tint) defined in globals.css. fg stays the constant full-saturation
+// accent color in both themes.
+const CATEGORY_BG: Record<ServiceCategory, string> = {
+  hospital: "var(--cat-tint-red)",
+  clinic: "var(--cat-tint-amber)",
+  bank: "var(--cat-tint-blue)",
+  atm: "var(--cat-tint-indigo)",
+  school: "var(--cat-tint-purple)",
+  government: "var(--cat-tint-green)",
 };
 
 export default function ServiceCard({
@@ -186,8 +199,15 @@ export default function ServiceCard({
   // possible per page, loading a map image for every card up front would be
   // hundreds of wasted Mapbox requests for cards no one ever looks at twice.
   const staticMapUrl = MAPBOX_TOKEN
-    ? `https://api.mapbox.com/styles/v1/mapbox/streets-v12/static/pin-s+1D9E75(${lng},${lat})/${lng},${lat},15,0/600x300@2x?access_token=${MAPBOX_TOKEN}`
+    ? `https://api.mapbox.com/styles/v1/mapbox/dark-v11/static/pin-s+1D9E75(${lng},${lat})/${lng},${lat},15,0/600x300@2x?access_token=${MAPBOX_TOKEN}`
     : null;
+
+  const hoursLabel =
+    isOpen === null
+      ? t("status.hoursUnknown")
+      : isOpen
+        ? t("status.openNow")
+        : t("status.closed");
 
   return (
     <div
@@ -196,47 +216,38 @@ export default function ServiceCard({
         cardRef?.(el);
       }}
       onClick={() => onSelect?.(id)}
-      className={`flex flex-col gap-3 rounded-xl border bg-white p-4 shadow-sm transition hover:shadow-md ${
-        onSelect ? "cursor-pointer" : ""
-      } ${isSelected ? "border-primary ring-2 ring-primary/40" : "border-primary-100"}`}
+      className={`rounded-[10px] border p-2.5 transition ${onSelect ? "cursor-pointer" : ""} ${
+        isSelected
+          ? "border-[#1D9E75] bg-[var(--cat-tint-green)]"
+          : "border-[var(--border-subtle)] bg-[var(--surface-2)] hover:border-[var(--border-strong)]"
+      }`}
     >
-      <div className="flex items-start justify-between gap-3">
-        <div className="flex items-center gap-3 min-w-0">
-          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-50 text-primary-700">
-            <CategoryIcon className="h-5 w-5" strokeWidth={1.75} />
-          </span>
-          <div className="min-w-0">
-            <p className="truncate font-semibold text-foreground">{name}</p>
-            <p className="text-sm text-primary-700">{t(`category.${category}`)}</p>
-          </div>
-        </div>
-        <span className="whitespace-nowrap text-sm font-medium text-foreground/70">
-          {distanceLabel}
+      <div className="flex items-start gap-2">
+        <span
+          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg"
+          style={{ background: CATEGORY_BG[category], color: CATEGORY_COLOR[category] }}
+        >
+          <CategoryIcon className="h-[15px] w-[15px]" strokeWidth={1.75} />
         </span>
+        <div className="min-w-0 flex-1">
+          <p className="truncate text-xs font-medium text-[var(--text-1)]">{name}</p>
+          <p className="mt-0.5 text-[11px] text-[#1D9E75]">{t(`category.${category}`)}</p>
+        </div>
+        <span className="shrink-0 text-[11px] text-[var(--text-4)]">{distanceLabel}</span>
       </div>
 
-      <div className="flex items-center gap-2">
-        {isOpen === null ? (
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-500">
-            <Clock className="h-3 w-3" strokeWidth={2} />
-            {t("status.hoursUnknown")}
-          </span>
-        ) : isOpen ? (
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-primary-50 px-2.5 py-1 text-xs font-medium text-primary-700">
-            <span className="h-1.5 w-1.5 rounded-full bg-primary-500" />
-            {t("status.openNow")}
-          </span>
-        ) : (
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-red-50 px-2.5 py-1 text-xs font-medium text-red-600">
-            <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
-            {t("status.closed")}
-          </span>
-        )}
+      <div
+        className={`mt-2 flex items-center gap-1 text-[10px] ${
+          isOpen === false ? "text-red-500" : isOpen ? "text-[#1D9E75]" : "text-[var(--text-4)]"
+        }`}
+      >
+        <Clock className="h-2.5 w-2.5" strokeWidth={2} />
+        {hoursLabel}
       </div>
 
-      <div className="flex items-start gap-1.5 whitespace-pre-line rounded-lg border border-dashed border-primary-200 bg-primary-50/40 p-2 text-xs text-foreground/60">
+      <div className="mt-1.5 flex items-start gap-1 rounded-md bg-[#1D9E75]/10 px-2 py-1 text-[10px] text-[#1D9E75]">
         <Sparkles
-          className={`mt-0.5 h-3.5 w-3.5 shrink-0 text-primary-500 ${isGenerating ? "animate-pulse" : ""}`}
+          className={`mt-0.5 h-2.5 w-2.5 shrink-0 ${isGenerating ? "animate-pulse" : ""}`}
           strokeWidth={1.75}
         />
         <span>{displayedTip ?? (streamFailed ? t("aiTip.comingSoon") : t("aiTip.generating"))}</span>
@@ -248,36 +259,36 @@ export default function ServiceCard({
           event.stopPropagation();
           setIsExpanded((prev) => !prev);
         }}
-        className="flex items-center justify-center gap-1 text-xs font-medium text-primary-700 hover:underline"
+        className="mt-1.5 flex w-full items-center justify-center gap-1 rounded-md py-1 text-[10px] font-medium text-[var(--text-4)] transition hover:bg-[var(--hover-overlay)] hover:text-[var(--text-3)]"
       >
         {isExpanded ? (
           <>
             {t("actions.hideDetails")}
-            <ChevronUp className="h-3.5 w-3.5" strokeWidth={1.75} />
+            <ChevronUp className="h-3 w-3" strokeWidth={1.75} />
           </>
         ) : (
           <>
             {t("actions.showDetails")}
-            <ChevronDown className="h-3.5 w-3.5" strokeWidth={1.75} />
+            <ChevronDown className="h-3 w-3" strokeWidth={1.75} />
           </>
         )}
       </button>
 
       {isExpanded && (
-        <div className="flex flex-col gap-3 border-t border-primary-100 pt-3">
+        <div className="mt-1.5 flex flex-col gap-2 border-t border-[var(--border-subtle)] pt-2">
           {staticMapUrl && (
             // eslint-disable-next-line @next/next/no-img-element
             <img
               src={staticMapUrl}
               alt={name}
-              className="h-32 w-full rounded-lg object-cover"
+              className="h-24 w-full rounded-md object-cover"
               loading="lazy"
             />
           )}
 
           {address && (
-            <p className="flex items-start gap-1.5 text-sm text-foreground/60">
-              <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0" strokeWidth={1.75} />
+            <p className="flex items-start gap-1.5 text-[11px] text-[var(--text-4)]">
+              <MapPin className="mt-0.5 h-3 w-3 shrink-0" strokeWidth={1.75} />
               <span>{address}</span>
             </p>
           )}
@@ -288,25 +299,25 @@ export default function ServiceCard({
                 href={`tel:${phone ?? aiPhone}`}
                 onClick={(event) => event.stopPropagation()}
                 aria-label={t("actions.call")}
-                className="flex items-center gap-1.5 text-sm text-primary-700 hover:underline"
+                className="flex items-center gap-1.5 text-[11px] text-[#1D9E75] hover:underline"
               >
-                <Phone className="h-3.5 w-3.5 shrink-0" strokeWidth={1.75} />
+                <Phone className="h-3 w-3 shrink-0" strokeWidth={1.75} />
                 <span>{phone ?? aiPhone}</span>
               </a>
               {!phone && aiPhone && (
-                <span className="pl-5 text-xs text-foreground/40">{t("actions.aiSuggested")}</span>
+                <span className="pl-[18px] text-[10px] text-[var(--text-4)]">{t("actions.aiSuggested")}</span>
               )}
             </div>
           ) : helpline ? (
-            <p className="flex items-start gap-1.5 text-sm text-foreground/60">
-              <Phone className="mt-0.5 h-3.5 w-3.5 shrink-0" strokeWidth={1.75} />
+            <p className="flex items-start gap-1.5 text-[11px] text-[var(--text-4)]">
+              <Phone className="mt-0.5 h-3 w-3 shrink-0" strokeWidth={1.75} />
               <span>{t("status.helpline", { number: helpline })}</span>
             </p>
           ) : null}
 
           {nearestAlternative && (
-            <p className="flex items-start gap-1.5 text-sm text-foreground/60">
-              <Phone className="mt-0.5 h-3.5 w-3.5 shrink-0" strokeWidth={1.75} />
+            <p className="flex items-start gap-1.5 text-[11px] text-[var(--text-4)]">
+              <Phone className="mt-0.5 h-3 w-3 shrink-0" strokeWidth={1.75} />
               <span>
                 {t("status.nearestAlternative", {
                   name: nearestAlternative.name,
@@ -317,13 +328,13 @@ export default function ServiceCard({
           )}
 
           {openingHours ? (
-            <p className="flex items-start gap-1.5 text-xs text-foreground/60">
-              <Clock className="mt-0.5 h-3.5 w-3.5 shrink-0" strokeWidth={1.75} />
+            <p className="flex items-start gap-1.5 text-[10px] text-[var(--text-4)]">
+              <Clock className="mt-0.5 h-3 w-3 shrink-0" strokeWidth={1.75} />
               <span>{t("status.schedule", { hours: openingHours })}</span>
             </p>
           ) : typicalHours ? (
-            <p className="flex items-start gap-1.5 text-xs text-foreground/60">
-              <Clock className="mt-0.5 h-3.5 w-3.5 shrink-0" strokeWidth={1.75} />
+            <p className="flex items-start gap-1.5 text-[10px] text-[var(--text-4)]">
+              <Clock className="mt-0.5 h-3 w-3 shrink-0" strokeWidth={1.75} />
               <span>{t("status.typicalHours", { hours: typicalHours })}</span>
             </p>
           ) : null}
@@ -333,9 +344,9 @@ export default function ServiceCard({
             target="_blank"
             rel="noopener noreferrer"
             onClick={(event) => event.stopPropagation()}
-            className="flex items-center gap-1.5 text-sm text-primary-700 hover:underline"
+            className="flex items-center gap-1.5 text-[11px] text-[#1D9E75] hover:underline"
           >
-            <ExternalLink className="h-3.5 w-3.5 shrink-0" strokeWidth={1.75} />
+            <ExternalLink className="h-3 w-3 shrink-0" strokeWidth={1.75} />
             <span>{t("actions.viewOnMaps")}</span>
           </a>
         </div>
